@@ -1,0 +1,744 @@
+/* UNIQUE CLASS NAMES TO AVOID CONFLICTS */
+
+:root {
+  --fb-primary-red: #8b0000;
+  --fb-accent-gold: #d4af37;
+  --fb-bg-cream: #fdfbf7;
+  --fb-text-dark: #2d2d2d;
+  --fb-shadow-color: rgba(0, 0, 0, 0.7);
+}
+
+.fb-container {
+  width: 100%;
+  max-width: 2400px;
+  /* ENHANCED FOR ULTRA-WIDE */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 0.5rem 2rem;
+  min-height: 98vh;
+  position: relative;
+  z-index: 10;
+}
+
+.fb-book-wrapper {
+    width: 100%;
+    max-width: 1200px; /* Reduced from 1600px to make it smaller */
+    aspect-ratio: 1.64; /* 1800 / 1100 */
+    /* height: 90vh; REMOVED TO PREVENT SHRINKING ON F12 */
+    /* min-height: 700px; Replaced with aspect-ratio logic, but good to keep a floor */
+    min-height: 500px; /* Reduced floor height as well */
+    
+    box-shadow: 0 30px 90px var(--fb-shadow-color); /* Slightly reduced shadow */
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background-color: #1a0f0a;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    padding: 0;
+    transition: transform 0.3s ease;
+    position: relative;
+    margin: 0 auto; /* Ensure centered */
+}
+
+.fb-book-wrapper:hover {
+  transform: scale(1.01);
+}
+
+.fb-page-root {
+  background-color: var(--fb-bg-cream);
+  overflow: hidden;
+  position: relative;
+  font-family: "Lora", serif;
+  width: 100%;
+  height: 100%;
+}
+
+.fb-page-texture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  pointer-events: none;
+  background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
+}
+
+.fb-page-content {
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fb-page-header {
+  width: 100%;
+  border-bottom: 2px solid var(--fb-primary-red);
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.fb-page-header h4 {
+  color: var(--fb-primary-red);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 1rem;
+}
+
+.fb-page-body {
+  flex: 1;
+  width: 100%;
+  color: var(--fb-text-dark);
+  line-height: 1.8;
+  text-align: justify;
+  font-size: 1.25rem;
+  overflow-y: auto;
+}
+
+.fb-page-number {
+  margin-top: 1rem;
+  text-align: center;
+  color: rgba(139, 0, 0, 0.5);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.fb-spine-shadow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 24px;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.fb-spine-shadow-left {
+  right: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.25), transparent);
+}
+
+.fb-spine-shadow-right {
+  left: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.25), transparent);
+}
+
+.fb-cover-root {
+  background-color: var(--fb-primary-red);
+  color: white;
+  padding: 2rem;
+  border: 2px solid var(--fb-accent-gold);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.fb-cover-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--fb-primary-red);
+  z-index: 10;
+  border: 2px solid rgba(212, 175, 55, 0.4);
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+}
+
+.fb-cover-corner {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  border-color: var(--fb-accent-gold);
+  z-index: 10;
+}
+
+.fb-cover-corner-tl {
+  top: 1.5rem;
+  left: 1.5rem;
+  border-top-width: 2px;
+  border-left-width: 2px;
+}
+
+.fb-cover-corner-br {
+  bottom: 1.5rem;
+  right: 1.5rem;
+  border-bottom-width: 2px;
+  border-right-width: 2px;
+}
+
+/* RESPONSIVE SCALING */
+@media (max-width: 1200px) {
+  .fb-page-content {
+    padding: 1.5rem;
+  }
+
+  .fb-page-body {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .fb-page-content {
+    padding: 1rem;
+  }
+
+  .fb-page-body {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .fb-page-header {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Custom scrollbar for book pages */
+.fb-page-body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.fb-page-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.fb-page-body::-webkit-scrollbar-thumb {
+  background: var(--fb-accent-gold);
+  border-radius: 10px;
+}
+
+/* =========================================
+   REFACTORED CSS (FROM TAILWIND)
+   ========================================= */
+
+/* CONTAINER & LAYOUT */
+.fb-main-container {
+  min-height: 100vh;
+  background-color: #1a0f0a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 3rem 1rem;
+  position: relative;
+  overflow-y: auto;
+}
+
+.fb-bg-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  pointer-events: none;
+  background-image: radial-gradient(#d4af37 1.5px, transparent 1.5px);
+  background-size: 40px 40px;
+}
+
+.fb-title-section {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.fb-main-title {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-family: var(--font-display, sans-serif);
+  font-weight: 700;
+  color: #d4af37;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.fb-title-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.fb-sub-title {
+  color: #9ca3af;
+  font-family: var(--font-serif, serif);
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+/* COVER FRONT */
+.fb-cover-star {
+  width: 6rem;
+  height: 6rem;
+  color: #d4af37;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 768px) {
+  .fb-cover-star {
+    width: 8rem;
+    height: 8rem;
+  }
+}
+
+.fb-cover-title {
+  font-size: 3rem;
+  line-height: 1;
+  font-family: var(--font-display, sans-serif);
+  font-weight: 700;
+  text-align: center;
+  color: #d4af37;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+}
+
+@media (min-width: 768px) {
+  .fb-cover-title {
+    font-size: 3.75rem;
+  }
+}
+
+.fb-cover-subtitle {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-family: var(--font-serif, serif);
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  margin-bottom: 4rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  line-height: 1.25;
+}
+
+@media (min-width: 768px) {
+  .fb-cover-subtitle {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+.fb-cover-divider {
+  width: 10rem;
+  height: 0.5rem;
+  background-color: #d4af37;
+  margin-bottom: 4rem;
+}
+
+.fb-cover-footer {
+  color: #d4af37;
+  text-transform: uppercase;
+  letter-spacing: 0.6em;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .fb-cover-footer {
+    font-size: 1.25rem;
+  }
+}
+
+/* INTRO PAGE (Lời Ngỏ) */
+.fb-intro-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.fb-intro-star {
+  width: 5rem;
+  height: 5rem;
+  color: #8b0000;
+  margin-bottom: 2rem;
+  opacity: 0.2;
+}
+
+.fb-intro-title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-family: var(--font-display, sans-serif);
+  font-weight: 700;
+  color: #8b0000;
+  margin-bottom: 2rem;
+}
+
+.fb-intro-quote {
+  font-style: italic;
+  color: #4b5563;
+  margin-bottom: 2.5rem;
+  font-family: var(--font-serif, serif);
+  line-height: 1.625;
+  font-size: 1.25rem;
+}
+
+.fb-intro-divider {
+  width: 4rem;
+  height: 0.25rem;
+  background-color: #d4af37;
+  margin-bottom: 2.5rem;
+}
+
+.fb-intro-text {
+  font-size: 1rem;
+  color: #9ca3af;
+  font-family: var(--font-serif, serif);
+  line-height: 1.625;
+}
+
+/* CONTENT PAGE 1 (Quan niệm về Dân chủ) */
+.fb-content-center {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.fb-text-highlight {
+  color: #8b0000;
+  font-weight: 700;
+}
+
+.fb-greek-term {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.fb-greek-box {
+  background-color: #8b0000;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.fb-greek-def {
+  color: #8b0000;
+  font-size: 1.5rem;
+  font-family: var(--font-display, sans-serif);
+  font-weight: 700;
+}
+
+.fb-quote-box {
+  background-color: rgba(212, 175, 55, 0.1);
+  padding: 2rem;
+  border-left: 8px solid #d4af37;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: #1f2937;
+  font-weight: 500;
+  font-family: var(--font-serif, serif);
+  line-height: 1.8;
+}
+
+/* CONTENT PAGE 2 (Bản chất Dân chủ XHCN) */
+.fb-list-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.fb-list-number {
+  background-color: #8b0000;
+  color: white;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.125rem;
+  margin-top: 0.25rem;
+  font-weight: 700;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.fb-list-text {
+  font-size: 1.125rem;
+  font-family: var(--font-serif, serif);
+  line-height: 1.625;
+}
+
+.fb-dashed-box {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  border-radius: 0.75rem;
+  border: 2px dashed #e5e7eb;
+  font-style: italic;
+  font-size: 1rem;
+  color: #6b7280;
+  text-align: center;
+}
+
+/* DIAGRAM (Hệ thống Chính trị) */
+.fb-diagram-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.fb-diagram-box {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.fb-diagram-box-red {
+  background-color: #8b0000;
+  color: white;
+  transform: rotate(-1deg);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+.fb-diagram-box-gold {
+  background-color: #d4af37;
+  color: white;
+  transform: rotate(1deg);
+}
+
+.fb-diagram-box-white {
+  background-color: white;
+  border: 4px solid #8b0000;
+  color: #8b0000;
+  transform: rotate(-1deg);
+}
+
+.fb-diagram-text {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1.25rem;
+}
+
+.fb-diagram-connector {
+  display: flex;
+  justify-content: center;
+  height: 3rem;
+}
+
+.fb-diagram-line {
+  width: 0.25rem;
+  background-color: #d1d5db;
+  height: 100%;
+}
+
+/* GRID PAGE (Phương châm Cơ sở) */
+.fb-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.fb-grid-item {
+  background-color: white;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  color: #8b0000;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s;
+  cursor: default;
+}
+
+.fb-grid-item:hover {
+  background-color: #8b0000;
+  color: white;
+}
+
+.fb-grid-label {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.fb-grid-item:hover .fb-grid-label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.fb-grid-value {
+  font-weight: 700;
+  font-size: 1.125rem;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 0.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .fb-grid-value {
+    font-size: 1.25rem;
+  }
+}
+
+.fb-info-box {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: rgba(139, 0, 0, 0.05);
+  border-radius: 1.5rem;
+  border: 2px solid rgba(139, 0, 0, 0.2);
+  text-align: center;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* CARDS PAGE (Hiến pháp & Pháp luật) */
+.fb-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: white;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border: 2px solid #f9fafb;
+  border-radius: 1rem;
+  transition: transform 0.3s;
+}
+
+.fb-card:hover {
+  transform: scale(1.02);
+}
+
+.fb-card-icon {
+  font-size: 2.25rem;
+}
+
+.fb-card-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #8b0000;
+  margin-bottom: 0.25rem;
+}
+
+.fb-card-text {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* SOLUTIONS PAGE (Giải pháp) */
+.fb-check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.fb-check-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.125rem;
+}
+
+.fb-check-icon {
+  width: 2rem;
+  height: 2rem;
+  background-color: rgba(139, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8b0000;
+}
+
+.fb-slogan-box {
+  padding: 2rem;
+  background-color: rgba(212, 175, 55, 0.2);
+  border-radius: 1.5rem;
+  text-align: center;
+  border-top: 4px solid #d4af37;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.fb-slogan-text {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #8b0000;
+  text-transform: uppercase;
+  font-family: var(--font-display, sans-serif);
+  letter-spacing: 0.1em;
+}
+
+/* SUMMARY PAGE */
+.fb-summary-quote {
+  font-size: 1.5rem;
+  color: #374151;
+  margin-bottom: 4rem;
+  line-height: 2;
+  font-family: var(--font-serif, serif);
+  font-style: italic;
+  text-align: justify;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.fb-end-badge {
+  width: 8rem;
+  height: 8rem;
+  border: 8px solid #8b0000;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0 20px 60px rgba(139, 0, 0, 0.3);
+  position: relative;
+}
+
+/* BACK COVER */
+.fb-back-title {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-family: var(--font-display, sans-serif);
+  font-weight: 700;
+  color: #d4af37;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5em;
+}
+
+@media (min-width: 768px) {
+  .fb-back-title {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+.fb-back-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.125rem;
+  font-family: var(--font-serif, serif);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-bottom: 1rem;
+}
+
+.fb-back-footer {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.875rem;
+  font-style: italic;
+}
