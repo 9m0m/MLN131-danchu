@@ -16,7 +16,8 @@ export function AIUsage() {
                     <h1 className="text-4xl md:text-5xl font-display font-bold text-[#d4af37] mb-6 uppercase">Ứng dụng AI & Cam kết Học thuật</h1>
                     <div className="w-32 h-1.5 bg-[#d4af37] mx-auto rounded-full mb-8"></div>
                     <p className="text-white/80 max-w-2xl mx-auto text-lg leading-relaxed">
-                        Dự án MLN131 ứng dụng các công nghệ trí tuệ nhân tạo tiên tiến để hỗ trợ quá trình học tập, phát triển và sáng tạo nội dung, đảm bảo tính chính xác và trải nghiệm người dùng tốt nhất.
+                        Dự án MLN131 ứng dụng AI để hỗ trợ học tập và thiết kế trải nghiệm, nhưng nội dung học thuật vẫn được
+                        đối chiếu từ giáo trình gốc. AI chỉ đóng vai trò tăng tốc và trực quan hóa, không thay thế nguồn tài liệu chuẩn.
                     </p>
                 </motion.div>
 
@@ -81,6 +82,9 @@ export function AIUsage() {
                     <h3 className="text-[#d4af37] font-display font-bold text-xl mb-3">CAM KẾT CHẤT LƯỢNG NỘI DUNG</h3>
                     <p className="text-white/90 font-serif italic text-lg md:text-xl">
                         "Toàn bộ nội dung Quiz và kiến thức chuyên môn được trích xuất nguyên bản từ GIAO TRINH CNXHKH_2021 giáo trình chủ nghĩa xã hội khoa học."
+                    </p>
+                    <p className="text-white/70 text-sm md:text-base mt-4">
+                        Cam kết bổ sung: không phát sinh nội dung mới ngoài chương trình, minh bạch nguồn tài liệu và ưu tiên tính chính xác hơn tốc độ.
                     </p>
                 </motion.div>
             </div>

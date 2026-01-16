@@ -35,7 +35,8 @@ export function Home() {
                         transition={{ delay: 0.4 }}
                         className="hm-hero-desc"
                     >
-                        "Dân chủ không nằm trên giấy. Nó hiện diện trong cuộc sống."
+                        Dự án được tạo ra để biến kiến thức dân chủ cơ sở thành trải nghiệm học tập sống động,
+                        dễ hiểu, dễ áp dụng trong thực tiễn.
                     </motion.p>
 
                     <motion.div
@@ -61,32 +62,38 @@ export function Home() {
             <section id="story" className="hm-section hm-white-section">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="hm-section-title">Bản chất Dân chủ XHCN</h2>
-                        <div className="hm-divider"></div>
+                        <h2 className="hm-section-title">Vì sao tạo ra sản phẩm này?</h2>
+                        <p className="text-xl text-gray-600 font-serif italic text-center mt-4">
+                            Kết nối kiến thức lý luận với trải nghiệm số để học nhanh hơn, nhớ lâu hơn và áp dụng tốt hơn.
+                        </p>
+                        <div className="hm-divider mt-6"></div>
                     </div>
 
                     <div className="hm-grid-3">
                         <div className="hm-feat-card">
                             <div className="hm-feat-number">1</div>
-                            <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Dân chủ là gì?</h3>
+                            <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Nguồn gốc & Mục tiêu</h3>
                             <p className="text-gray-700 leading-relaxed font-serif">
-                                Là quyền lực thuộc về Nhân dân. Nhà nước phục vụ lợi ích Nhân dân và chịu sự giám sát của Nhân dân.
+                                Sản phẩm ra đời để hệ thống hóa nội dung MLN131, giúp người học tiếp cận lý luận một cách
+                                trực quan thay vì chỉ đọc văn bản thuần túy.
                             </p>
                         </div>
 
                         <div className="hm-feat-card">
                             <div className="hm-feat-number alt">2</div>
-                            <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Chủ thể quyền lực</h3>
+                            <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Vì sao nên sử dụng?</h3>
                             <p className="text-gray-700 leading-relaxed font-serif">
-                                Nhân dân không chỉ thụ hưởng mà còn trực tiếp kiến tạo, xây dựng và quyết định vận mệnh đất nước.
+                                Bạn có thể học nhanh qua flipbook, ôn tập bằng quiz và tra cứu ý chính một cách mạch lạc,
+                                giảm tải thời gian ghi nhớ rời rạc.
                             </p>
                         </div>
 
                         <div className="hm-feat-card">
                             <div className="hm-feat-number">3</div>
-                            <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Động lực phát triển</h3>
+                            <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Tác dụng vượt ngoài giáo trình</h3>
                             <p className="text-gray-700 leading-relaxed font-serif">
-                                Dân chủ giải phóng sức sáng tạo của nhân dân, tạo sự đồng thuận xã hội để phát triển kinh tế bền vững.
+                                Tăng khả năng phản biện, kết nối thực tiễn địa phương và hình thành tư duy công dân số chủ động,
+                                không chỉ dừng ở việc đọc tài liệu giấy.
                             </p>
                         </div>
                     </div>

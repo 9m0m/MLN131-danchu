@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Scale, BookOpen, Brain, PlayCircle, Menu, X, Bot } from 'lucide-react';
+import { Scale, BookOpen, Brain, PlayCircle, Menu, X, Bot, Gamepad2, Landmark } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
@@ -11,6 +11,8 @@ export function Header() {
         { path: '/', label: 'Trang chủ', icon: <Scale className="w-5 h-5" /> },
         { path: '/ai-assistant', label: 'Trợ lý AI', icon: <Brain className="w-5 h-5" /> },
         { path: '/flipbook', label: 'Flipbook', icon: <BookOpen className="w-5 h-5" /> },
+        { path: '/museum', label: 'Bảo tàng', icon: <Landmark className="w-5 h-5" /> },
+        { path: '/games', label: 'Trò chơi', icon: <Gamepad2 className="w-5 h-5" /> },
         { path: '/quiz', label: 'Quiz', icon: <PlayCircle className="w-5 h-5" /> },
         { path: '/ai-usage', label: 'AI Usage', icon: <Bot className="w-5 h-5" /> },
     ];

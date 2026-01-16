@@ -46,15 +46,20 @@ const Page = forwardRef<HTMLDivElement, PageProps>((props, ref) => {
 
 Page.displayName = 'Page';
 
-const Cover = forwardRef<HTMLDivElement, { children: React.ReactNode, type?: 'front' | 'back' }>((props, ref) => {
+const Cover = forwardRef<HTMLDivElement, { children: React.ReactNode, type?: 'front' | 'back'; number?: number }>((props, ref) => {
+    const coverType = props.type ?? 'front';
     return (
-        <div className="fb-cover-root" ref={ref}>
+        <div className={`fb-cover-root fb-cover-${coverType}`} ref={ref}>
             <div className="fb-cover-corner fb-cover-corner-tl"></div>
             <div className="fb-cover-corner fb-cover-corner-br"></div>
 
-            <div className="fb-cover-inner">
+            <div className={`fb-cover-inner fb-cover-inner-${coverType}`}>
                 {props.children}
             </div>
+
+            {props.number !== undefined && (
+                <div className="fb-cover-number">- {props.number} -</div>
+            )}
         </div>
     );
 });
@@ -89,15 +94,15 @@ export function Flipbook() {
                 <div className="fb-book-wrapper">
                     {/* @ts-expect-error - Library types mismatch */}
                     <HTMLFlipBook
-                        width={900} // WIDE ASPECT RATIO (PER PAGE)
-                        height={1100} // WIDE ASPECT RATIO (PER PAGE)
-                        size="stretch" // STRETCH TO FILL CONTAINER
+                        width={600} // Reduced to fit viewport
+                        height={800} // Reduced to fit viewport
+                        size="stretch"
                         minWidth={315}
-                        maxWidth={3000} // REMOVE BOTTLENECK
+                        maxWidth={1600}
                         minHeight={420}
-                        maxHeight={3000} // REMOVE BOTTLENECK
+                        maxHeight={2000}
                         maxShadowOpacity={0.85}
-                        showCover={false} // RESTORE 2-PAGE SPREAD FROM START
+                        showCover={false}
                         mobileScrollSupport={true}
                         startPage={0}
                         drawShadow={true}
@@ -115,8 +120,9 @@ export function Flipbook() {
                         <BlankPage />
 
                         {/* INDEX 1: TRANG BÌA TRƯỚC (RIGHT) */}
-                        <Cover type="front">
+                        <Cover type="front" number={0}>
                             <Star className="fb-cover-star" />
+                            <span className="fb-cover-kicker">Giáo trình môn học</span>
                             <h1 className="fb-cover-title">Chương 4</h1>
                             <h2 className="fb-cover-subtitle">Dân chủ Xã hội Chủ nghĩa & Nhà nước Xã hội Chủ nghĩa</h2>
                             <div className="fb-cover-divider"></div>
@@ -293,9 +299,10 @@ export function Flipbook() {
                         </Page>
 
                         {/* INDEX 10: BACK COVER (LEFT) */}
-                        <Cover type="back">
+                        <Cover type="back" number={9}>
                             <Star className="w-20 h-20 text-[#d4af37] mb-10 opacity-40" />
                             <h3 className="fb-back-title">HẾT</h3>
+                            <div className="fb-back-divider"></div>
                             <p className="fb-back-subtitle">MLN131 - Chủ nghĩa Xã hội Khoa học</p>
                             <p className="fb-back-footer">@ FPT University - 2026</p>
                         </Cover>
