@@ -1,0 +1,653 @@
+// ============================================
+// GAME "VƯƠNG QUỐC AURELIA - DÂN CHỦ CƠ SỞ"
+// Mô phỏng dân chủ cơ sở trong bối cảnh fantasy trung cổ
+// Áp dụng nguyên lý: "Quốc Chủ lãnh đạo, Hội đồng quản lý, Lãnh dân làm chủ"
+// ============================================
+
+import { Stage, Ending, EndingType } from '../types/game';
+
+// ============================================
+// 5 TÌNH HUỐNG DÂN CHỦ CƠ SỞ TRONG BỐI CẢNH TRUNG CỔ
+// ============================================
+
+export const stages: Stage[] = [
+  // ========== TÌNH HUỐNG 1: Khai hoang vùng đất mới ==========
+  {
+    id: 1,
+    title: "Khai hoang vùng đất hoang vu",
+    period: "Năm 3 - Triều đại Minh Vương",
+    context: `Lãnh địa Tân Phú (thuộc Bá tước Đông Nam) vừa được ban cho một vùng đất hoang rộng 200 mẫu Anh:
+
+• Một Thương đoàn từ phương Tây muốn thuê đất xây nhà máy dệt, hứa trả 500 đồng vàng mỗi năm
+• Nhưng trên vùng đất này có 150 gia đình nông nô đang khai hoang tự phát, trồng lúa mạch nuôi sống gia đình
+• Thương đoàn cam kết tạo việc làm cho 2000 người, giúp Lãnh địa thịnh vượng
+• Nhưng lãnh dân lo sợ mất đất canh tác, ô nhiễm từ nhà máy làm hỏng nguồn nước`,
+    situation: `Bạn là Quản lý Lãnh địa được Bá tước bổ nhiệm. Bá tước giao nhiệm vụ nhanh chóng dọn dẹp vùng đất để cho Thương đoàn vào đầu tư - phải báo cáo hoàn thành trong vòng một tháng trăng.
+
+Nhưng theo Sắc lệnh Hoàng gia năm 1223, Điều 15 quy định: "Mọi quyết định ảnh hưởng đến sinh kế của lãnh dân phải được Hội đồng Lãnh dân bàn bạc và đồng ý". 
+
+Cuộc họp Hội đồng Lãnh dân sẽ diễn ra tuần tới tại Đại sảnh làng. Một số cận vệ nói: "Cứ tổ chức cho có lệ, rồi làm theo lệnh Bá tước". Nhưng lãnh dân đang rất bức xúc, nhiều người yêu cầu được tham gia ý kiến thực sự.
+
+Một già làng nói: "Nếu Ngài không lắng nghe tiếng nói của chúng tôi, tất cả sẽ từ bỏ đất đai và ra đi. Lãnh địa sẽ chỉ còn đất trống!" Áp lực từ hai phía đang đè nặng lên vai bạn.`,
+    choices: [
+      {
+        id: 'A',
+        text: "Triệu tập Hội đồng Trưởng thôn - Lấy ý kiến hình thức",
+        description: `Triệu tập 30 trưởng thôn, già làng và những người có uy tín đến Đại sảnh Lãnh địa. Ngài chuẩn bị bữa tiệc nhỏ, phát biểu dài về tầm nhìn thịnh vượng của Lãnh địa khi có nhà máy.
+
+Trình bày bằng bản đồ đẹp mắt, giải thích vài lợi ích chung. Sau đó yêu cầu biểu quyết bằng cách giơ tay. Những người không đồng ý sẽ bị ghi nhớ. Lập biên bản "Hội đồng Lãnh dân nhất trí 100%".
+
+Thủ tục hoàn tất trong một buổi sáng. Bá tước hài lòng, khen Ngài "làm việc nhanh chóng, hiệu quả". Thương đoàn bắt đầu xây dựng ngay tuần sau. Nhưng 150 gia đình nông nô không được hỏi ý kiến, chỉ nhận được lệnh di dời trong 10 ngày.
+
+Phương án này tuân thủ HÌNH THỨC của Sắc lệnh - có họp Hội đồng. Nhưng vi phạm TINH THẦN - lãnh dân không thực sự được quyền tham gia quyết định. Nguy cơ: Nông nô bỏ trốn, nổi loạn nhỏ, hoặc phá hoại nhà máy sau này.
+
+Lịch sử cho thấy: Những Lãnh chủ chỉ làm hình thức dân chủ thường phải đối mặt với khủng hoảng lớn sau này.`,
+        effects: { economy: 6, trust: -7, happiness: -4 }
+      },
+      {
+        id: 'B',
+        text: "Tổ chức Đại hội Lãnh dân mở rộng - Dân chủ thực chất",
+        description: `Tổ chức 5 buổi họp tại từng thôn trong hai tuần. Mời TẤT CẢ gia đình nông nô bị ảnh hưởng, kể cả phụ nữ và người già - bất kể địa vị. Đồng thời mời cả Pháp sư nghiên cứu môi trường, đại diện Thương đoàn, Hội đồng Trưởng thôn, Ban Thanh tra Lãnh dân.
+
+Công khai RÕ RÀNG: Phương án đền bù (5 đồng bạc mỗi mẫu đất + hỗ trợ 2 năm lương thực), cam kết tuyển dụng ưu tiên người địa phương (ít nhất 60% lao động), báo cáo tác động môi trường của Pháp sư độc lập, kế hoạch xử lý nước thải bằng ma thuật thanh tẩy.
+
+Lắng nghe TỪNG ý kiến, ghi chép chi tiết. Điều chỉnh phương án dựa trên nguyện vọng HỢP LÝ: Tăng đền bù lên 7 đồng bạc, bổ sung điều kiện bảo vệ nguồn nước, cam kết đào tạo nghề miễn phí. Cuối cùng, tổ chức bỏ phiếu BÍ MẬT bằng đá trắng (đồng ý) và đá đen (không đồng ý).
+
+Mất nhiều thời gian, Bá tước phật ý nhiều lần, đòi Ngài giải trình chậm trễ. Phải xin gia hạn 3 tuần, mất uy tín tạm thời. Nhưng kết quả: 85% lãnh dân bỏ phiếu đồng ý. Họ cảm thấy được TÔN TRỌNG, được quyền QUY��T ĐỊNH về chính cuộc sống mình.
+
+Đây là THỰC HIỆN ĐÚNG tinh thần "Lãnh dân làm chủ" theo Sắc lệnh Hoàng gia. Không chỉ là nghe qua loa, mà là cho họ QUYỀN QUYẾT ĐỊNH thực sự. Mặc dù chậm, nhưng nền tảng niềm tin được xây dựng vững chắc.`,
+        effects: { economy: 2, trust: 6, happiness: 5 }
+      },
+      {
+        id: 'C',
+        text: "Bỏ qua thủ tục - Cưỡng chế nhanh, làm giả biên bản",
+        description: `Không tổ chức bất kỳ cuộc họp nào. Ra lệnh cho cận vệ: "Trong 10 ngày, tất cả nông nô phải rời khỏi vùng đất. Ai không tuân sẽ bị bắt giam". Ký văn bản gửi Bá tước: "Đã tổ chức Hội đồng Lãnh dân, nhân dân nhất trí 100%".
+
+Lập biên bản giả có chữ ký của một số trưởng thôn (được hối lộ 10 đồng bạc mỗi người). Tiến hành giải tỏa nhanh chóng. Những người chống đối bị cận vệ đánh đập, nhốt vào hầm tối 3 ngày "để họ hiểu lý".
+
+Hoàn thành trước thời hạn 2 tuần. Bá tước TẬN TÌNH khen ngợi, thăng chức Ngài lên Tước hiệu nhỏ. Thương đoàn hài lòng, "tặng" Ngài một khoản "lễ vật" 50 đồng vàng riêng. Nhà máy bắt đầu hoạt động, ngân sách Lãnh địa tăng gấp đôi.
+
+Nhưng: Lãnh dân oán hận sâu sắc. Họ gửi đơn khiếu nại lên Công tước, lên cả Hoàng gia. Một nhóm nông nô trốn vào rừng, thành lập băng cướp tấn công đoàn xe buôn của Lãnh địa. Niềm tin vào Quản lý hoàn toàn mất.
+
+VI PHẠM NGHIÊM TRỌNG Sắc lệnh Hoàng gia. Nếu bị Thanh tra Hoàng gia phát hiện: Truất phế chức vụ, tịch thu tài sản, thậm chí bị trục xuất khỏi Lãnh địa. Đây là con đường ngắn hạn có lợi, nhưng dài hạn TỰ HỦY HOẠI.`,
+        effects: { economy: 8, trust: -9, happiness: -7 }
+      }
+    ],
+    historicalNote: `📜 CƠ SỞ LÝ THUYẾT:
+
+Sắc lệnh Hoàng gia năm 1223: "Quyền lực đến từ lòng tin của lãnh dân. Một Lãnh chủ không có sự ủng hộ của dân chúng chỉ là một kẻ ngồi trên ngai rỗng."
+
+Học thuyết của Hiền triết Magnus: "Dân chủ không phải là cho dân quyền nói, mà là cho dân quyền QUYẾT ĐỊNH. Không phải là hỏi ý kiến rồi làm theo ý mình, mà là LẮNG NGHE và ĐIỀU CHỈNH."`
+  },
+
+  // ========== TÌNH HUỐNG 2: Phân bổ ngân khố Lãnh địa ==========
+  {
+    id: 2,
+    title: "Phân bổ Ngân khố xây dựng",
+    period: "Năm 5 - Triều đại Minh Vương",
+    context: `Kỳ họp Hội đồng Lãnh địa sắp diễn ra để quyết định chi 500 đồng vàng từ ngân khố. Ba công trình cấp bách:
+
+• Công trình A: Sửa đường liên Lãnh (chi phí 250 vàng) - Bá tước ưu tiên, để vận chuyển hàng hóa
+• Công trình B: Xây Nhà thương mới (200 vàng) - Lãnh dân mong mỏi, nhà thương cũ sắp sập
+• Công trình C: Sửa 3 trường học (150 vàng) - Nhiều lớp học dột nát, nguy hiểm cho học sinh
+
+Vấn đề: Ngân khố chỉ đủ cho 2 trong 3 công trình. Phải lựa chọn ưu tiên.`,
+    situation: `Bạn vừa là Đại biểu Hội đồng Lãnh địa (do lãnh dân bầu), vừa là thành viên Hội Kỵ sĩ (tổ chức lãnh đạo của Lãnh địa). Tại cuộc họp Hội Kỵ sĩ tuần trước, Đại trưởng đã ra lệnh: "Ưu tiên Công trình A để phục vụ thương mại, theo chỉ thị của Bá tước".
+
+Nhưng qua cuộc thăm dò ý kiến do Ban Dân biểu tổ chức, có tới 480/600 gia đình (80%) mong muốn ưu tiên Công trình B và C (y tế + giáo dục). Nhiều già làng còn gửi thư đến Hội đồng, van xin: "Con cháu chúng tôi đang học trong nhà dột, bệnh nhân nằm sàn ướt. Xin hãy nghĩ đến chúng tôi!"
+
+Tại phiên họp Hội đồng Lãnh địa ngày mai, bạn phải đưa ra phiếu bầu. Một số Đại biểu thì thầm: "Phải nghe lệnh Hội Kỵ sĩ, đó là kỷ luật". Nhưng cũng có người nói: "Đại biểu Hội đồng đại diện cho dân, phải theo tiếng nói của họ".
+
+Một Lão nông đã tìm đến tận nhà bạn tối qua, quỳ xuống van xin: "Con trai tôi bị sốt rét nặng, nhà thương không còn giường. Nó đã chết... Xin Ngài đừng quên chúng tôi nữa."
+
+Làm sao cân bằng giữa "Hội Kỵ sĩ lãnh đạo" và "Lãnh dân làm chủ"? Đây là thử thách lớn nhất về nguyên tắc quyền lực.`,
+    choices: [
+      {
+        id: 'A',
+        text: "Bỏ phiếu theo lệnh Hội Kỵ sĩ - Chọn Công trình A",
+        description: `Tuân thủ nguyên tắc kỷ luật sắt của Hội Kỵ sĩ. Tại phiên họp Hội đồng, bạn đứng dậy phát biểu: "Thương mại là nền tảng thịnh vượng. Đường tốt, hàng hóa lưu thông, mọi người đều giàu lên. Đó là lợi ích lâu dài."
+
+Bỏ phiếu chọn Công trình A. Động viên các Đại biểu khác: "Hội Kỵ sĩ đã quyết định, chúng ta phải thống nhất". Dùng uy tín để thuyết phục 70% Đại biểu bỏ phiếu theo.
+
+Công trình A được phê duyệt. Đường liên Lãnh được sửa chữa, xe ngựa chạy êm ái. Thương nhân hài lòng, thương mại phát triển, thu nhập Lãnh địa tăng 30%. Bá tước khen ngợi, Đại trưởng Hội Kỵ sĩ thăng chức bạn.
+
+Nhưng: Lãnh dân cảm thấy BỊ PHẢN BỘI. Nhà thương vẫn xuống cấp, tháng sau có 2 bệnh nhân chết vì không có chỗ điều trị. Trường học vẫn dột, mùa mưa học sinh phải nghỉ học 2 tuần. Niềm tin vào Hội đồng Lãnh địa SUY GIẢM MẠNH.
+
+Nhiều người nói: "Lấy ý kiến để làm gì khi cuối cùng vẫn làm theo ý bọn quý tộc? Hội đồng Lãnh địa chỉ là con rối!" Tỷ lệ bỏ phiếu ở lần bầu cử sau giảm từ 85% xuống 40%.
+
+SAI LẦM: Hiểu sai ý nghĩa "Hội Kỵ sĩ lãnh đạo". Lãnh đạo KHÔNG có nghĩa là ra lệnh áp đặt. Lãnh đạo là CHỈ ĐẠO ĐƯỜNG LỐI ĐÚNG ĐẮN dựa trên LỢI ÍCH NHÂN DÂN, không phải lợi ích thương nhân hay quý tộc.`,
+        effects: { economy: 5, trust: -8, happiness: -6 }
+      },
+      {
+        id: 'B',
+        text: "Đề xuất phương án hoà giải - Cân bằng lợi ích",
+        description: `Làm việc suốt đêm, chuẩn bị bản trình bày chi tiết. Sáng hôm sau, xin phát biểu TRƯỚC cả Hội Kỵ sĩ và Hội đồng Lãnh địa tại Đại sảnh.
+
+Trình bày kết quả thăm dò: 80% lãnh dân mong muốn y tế + giáo dục. Đưa ra PHƯƠNG ÁN MỚI: 
+- Năm nay ưu tiên Công trình B + C (y tế 200 + giáo dục 150 = 350 vàng)
+- 150 vàng còn lại làm đoạn đường cấp thiết nhất (4km thay vì 8km)
+- Công trình A đoạn còn lại đưa vào kế hoạch ƯU TIÊN NĂM SAU
+- Đồng thời kiến nghị Bá tước hỗ trợ từ Quỹ dự phòng, hoặc kêu gọi Thương đoàn đầu tư một phần
+
+Giải thích: "Hội Kỵ sĩ lãnh đạo là CHỈ ĐẠO ĐÚNG ĐẮN vì lợi ích nhân dân. Nếu nhân dân đang chết vì thiếu y tế, con em không có trường học, đó chính là lợi ích CẤP THIẾT NHẤT. Chúng ta phải LÃNH ĐẠO để PHỤC VỤ dân, không phải áp đặt ý chí lên dân."
+
+Cuộc tranh luận kéo dài 3 giờ. Một số Kỵ sĩ phản đối gay gắt. Nhưng cuối cùng, Đại trưởng gật đầu: "Lời bạn có lý. Chúng ta đã quên mất mục đích ban đầu của Hội Kỵ sĩ - bảo vệ lãnh dân."
+
+Phương án được thông qua với 65% phiếu ủng hộ. Mất công sức, bị một số Kỵ sĩ cáu gắt. Nhưng đây là cách THỰC HIỆN ĐÚNG "Hội Kỵ sĩ lãnh đạo, Lãnh dân làm chủ" - HAI NGUYÊN TẮC BỔ SUNG, không đối lập.`,
+        effects: { economy: 1, trust: 7, happiness: 6 }
+      },
+      {
+        id: 'C',
+        text: "Bỏ phiếu theo ý dân, bất chấp Hội Kỵ sĩ",
+        description: `Quyết định phản đối công khai. Tại phiên họp Hội đồng, bạn đứng dậy tuyên bố: "Tôi là Đại biểu do dân bầu ra, tôi chỉ nghe tiếng nói của dân. Hội Kỵ sĩ không có quyền can thiệp vào quyết định của Hội đồng!"
+
+Bỏ phiếu chọn Công trình B + C theo nguyện vọng 80% lãnh dân. Kêu gọi các Đại biểu khác: "Chúng ta đại diện cho dân, không phải cho quý tộc! Hãy làm đúng bổn phận!"
+
+Nhà thương và trường học được xây. Lãnh dân hân hoan, tổ chức lễ hội tạ ơn. Bạn được coi như anh hùng của người nghèo. Nhưng:
+
+Hội Kỵ sĩ họp khẩn, kết luận bạn "vi phạm kỷ luật nghiêm trọng, phá hoại sự thống nhất". Truất quyền thành viên Hội Kỵ sĩ. Bá tước GIẬN DỮ, gửi thư cảnh cáo: "Nếu lần sau còn bất tuân, sẽ bị trục xuất khỏi Lãnh địa."
+
+Bạn mất uy tín trong tầng lớp quý tộc, khó thăng tiến. Các Kỵ sĩ tẩy chay, không ai hợp tác trong các dự án khác. Lãnh địa rơi vào tình trạng phân cực: dân ủng hộ, nhưng quý tộc thù địch.
+
+SAI LẦM: Hiểu sai "Lãnh dân làm chủ". Dân chủ KHÔNG có nghĩa là VÔ TỔ CHỨC, VÔ KỶ LUẬT. Cần thực hiện đúng "Hội Kỵ sĩ lãnh đạo, Lãnh dân làm chủ" - HAI NGUYÊN TẮC THỐNG NHẤT, không đối đầu nhau.`,
+        effects: { economy: -2, trust: -5, happiness: 7 }
+      }
+    ],
+    historicalNote: `📜 CƠ SỞ LÝ THUYẾT:
+
+Hiến chương Vương quốc Aurelia năm 1200: "Hội Kỵ sĩ là lực lượng lãnh đạo Lãnh địa và xã hội, nhưng phải phục vụ lợi ích của toàn thể lãnh dân."
+
+Học thuyết Hiền triết Sophia: "Lãnh đạo không phải là quyền ra lệnh, mà là TRÁCH NHIỆM PHỤC VỤ. Một nhà lãnh đạo thực sự là người LẮNG NGHE và ĐIỀU CHỈNH quyết định dựa trên lợi ích của người được lãnh đạo."`
+  },
+
+  // ========== TÌNH HUỐNG 3: Ban hành Luật Quản lý đất đai ==========
+  {
+    id: 3,
+    title: "Ban hành Luật Đất đai mới",
+    period: "Năm 7 - Triều đại Minh Vương",
+    context: `Vương quốc Aurelia chuẩn bị ban hành Luật Quản lý đất đai - ảnh hưởng trực tiếp đến 5000 gia đình trong Lãnh địa:
+
+• Luật mới quy định: Tất cả đất canh tác phải đăng ký quyền sở hữu với Văn phòng Lãnh địa
+• Ai không đăng ký trong 6 tháng sẽ bị coi như đất vô chủ, có thể bị thu hồi
+• Luật rất phức tạp, dài 150 trang, toàn thuật ngữ pháp lý khó hiểu
+• 70% lãnh dân là nông nô không biết chữ, không hiểu nội dung`,
+    situation: `Bạn là Thư ký Lãnh địa, phụ trách công bố Luật mới. Văn phòng Lãnh địa nhận được Bản Luật từ Hoàng gia, yêu cầu thực hiện ngay.
+
+Một số Quan lại nói: "Chỉ cần dán Thông báo lên cổng Đại sảnh, đọc to một lần là đủ. Ai không biết chữ thì tự lo." Họ lập luận: "Đã CÔNG KHAI thông tin, đã thực hiện đúng thủ tục."
+
+Nhưng bà trưởng thôn già tìm đến văn phòng, lo lắng: "Dân tôi không hiểu Luật nói gì. Họ sợ mất đất, nhưng không biết phải làm thế nào. Nếu để vậy, 6 tháng sau hàng trăm gia đình sẽ vô gia cư!"
+
+Thực tế cho thấy: Nhiều Lãnh địa khác CHỈ CÔNG BỐ HÌNH THỨC - dán thông báo xong việc. Kết quả: Sau 6 tháng, hàng nghìn gia đình bị thu hồi đất vì không kịp đăng ký. Một số Lãnh địa nổ ra bạo loạn nông dân.
+
+Học thuyết Hiền triết Magnus: "DÂN BIẾT không chỉ là cho dân xem thông tin, mà là ĐẢM BẢO dân HIỂU được thông tin." Nhưng việc này tốn thời gian và nhân lực...`,
+    choices: [
+      {
+        id: 'A',
+        text: "Công bố hình thức - Dán thông báo, đọc một lần",
+        description: `Ra lệnh cho quan lại dán Bản Luật lên cổng Đại sảnh làng, Hội trường các thôn. Tổ chức 1 buổi đọc công khai tại Quảng trường Trung tâm vào sáng Chủ nhật - chỉ đọc ầm ầm trong 30 phút, không giải thích gì thêm.
+
+Lập biên bản: "Đã công bố Luật theo đúng quy định, ngày X tháng Y. Có 200 người tham dự". Gửi báo cáo lên Hoàng gia: "Lãnh địa đã thực hiện đầy đủ công tác công bố thông tin đến lãnh dân."
+
+Hoàn tất trong 3 ngày. Văn phòng Lãnh địa không tốn thêm chi phí, nhân lực. Đúng HÌNH THỨC theo quy định công bố của Hoàng gia.
+
+Nhưng: 90% lãnh dân KHÔNG HIỂU nội dung Luật. 6 tháng sau, có tới 800 gia đình KHÔNG ĐĂNG KÝ kịp vì:
+- Không biết chữ, không hiểu Luật nói gì
+- Không biết phải làm thủ tục như thế nào, đến đâu
+- Nhiều người còn không biết có Luật mới
+
+Văn phòng Lãnh địa lập danh sách "đất vô chủ" để thu hồi. Nông dân hoảng loạn, một nhóm 50 người kéo đến phản đối. Cận vệ phải can thiệp, xô xát, có người bị thương.
+
+VI PHẠM TINH THẦN "DÂN BIẾT" - chỉ đảm bảo hình thức công bố, không đảm bảo dân THỰC SỰ HIỂU được quyền lợi và nghĩa vụ của mình. Hậu quả dài hạn: Niềm tin vào pháp luật tan vỡ.`,
+        effects: { economy: 3, trust: -8, happiness: -5 }
+      },
+      {
+        id: 'B',
+        text: "Giải thích chi tiết - Tổ chức 10 buổi tuyên truyền tại thôn",
+        description: `Phân tích Luật thành 10 điểm chính, viết thành Sách hướng dẫn bằng ngôn ngữ đơn giản - có tranh minh hoạ để người không biết chữ cũng hiểu. In 500 bản phát miễn phí.
+
+Tổ chức 10 buổi tuyên truyền tại 10 thôn trong 4 tuần. Mỗi buổi:
+- Giải thích TỪNG ĐIỀU LUẬT bằng ví dụ cụ thể, dễ hiểu
+- Mời Pháp sư dùng ma thuật hiển ảnh để minh hoạ quy trình đăng ký
+- Phát Phiếu hỏi đáp để lãnh dân viết câu hỏi (hoặc nhờ thư ký viết hộ)
+- Giải đáp TẤT CẢ thắc mắc, kể cả những câu hỏi "ngớ ngẩn"
+
+Thành lập 3 Bàn tiếp nhận đăng ký lưu động, đi từng thôn để dân không phải đi xa. Hỗ trợ MIỄN PHÍ việc khai báo, làm giấy tờ cho người không biết chữ.
+
+Mất 1 tháng, tốn 50 đồng vàng (thuê thư ký, in tài liệu, trả công Pháp sư). Nhưng kết quả: 95% gia đình HIỂU RÕ quyền và nghĩa vụ của mình, đăng ký thành công trong thời hạn.
+
+Không có tranh chấp, không có bạo loạn. Lãnh dân cảm thấy được THAM GIA vào quá trình pháp luật, không bị "áp đặt một cách mơ hồ". Niềm tin vào hệ thống pháp luật TĂNG MẠNH.
+
+THỰC HIỆN ĐÚNG "DÂN BIẾT" - Không chỉ công bố hình thức, mà đảm bảo dân THỰC SỰ HIỂU ĐƯỢC. Đây là cách duy nhất để pháp luật được tôn trọng và thực thi hiệu quả.`,
+        effects: { economy: -1, trust: 8, happiness: 4 }
+      },
+      {
+        id: 'C',
+        text: "Công bố chọn lọc - Chỉ thông báo cho quý tộc và trưởng thôn",
+        description: `Chỉ gửi Bản Luật đầy đủ cho 30 trưởng thôn và 50 gia đình quý tộc - những người biết chữ. Tổ chức 1 buổi họp kín tại Đại sảnh Lãnh địa, giải thích chi tiết cho họ.
+
+Yêu cầu trưởng thôn "tự đi thông báo cho dân làng". Nhưng KHÔNG kiểm tra họ có làm hay không. Thực tế: Nhiều trưởng thôn chỉ nói qua loa "có Luật mới, tự lo đi" rồi thôi.
+
+Còn nông nô? Chỉ dán một Thông báo ngắn (5 dòng) lên cổng làng: "Luật Đất đai mới có hiệu lực. Đăng ký trong 6 tháng." KHÔNG giải thích gì thêm.
+
+Lập luận: "Chúng ta đã thông báo cho trưởng thôn - đại diện của dân. Việc còn lại là trách nhiệm của họ". Tiết kiệm thời gian, chỉ mất 1 tuần.
+
+Nhưng: 70% nông nô KHÔNG BIẾT chi tiết Luật, không hiểu cách đăng ký. Sau 6 tháng, có 1200 gia đình không đăng ký kịp. Văn phòng Lãnh địa thu hồi đất của họ.
+
+Kết quả: Chỉ quý tộc và người giàu giữ được đất (vì họ được thông báo đầy đủ). Người nghèo mất đất hàng loạt. Chênh lệch giai cấp gia tăng nghiêm trọng. Nông dân tức giận, tổ chức biểu tình quy mô lớn.
+
+VI PHẠM NGHIÊM TRỌNG "DÂN BIẾT" - Công bố có PHÂN BIỆT ĐỐI XỬ. Chỉ đảm bảo quyền lợi cho tầng lớp quý tộc, bỏ rơi người nghèo. Hậu quả: Hủy hoại sự công bằng, gây mất ổn định xã hội.`,
+        effects: { economy: 4, trust: -9, happiness: -7 }
+      }
+    ],
+    historicalNote: `📜 CƠ SỞ LÝ THUYẾT:
+
+Học thuyết Hiền triết Magnus về "DÂN BIẾT":
+"Công bố thông tin không bằng việc ĐẢM BẢO dân HIỂU được thông tin. Một Luật được công bố nhưng dân không hiểu chẳng khác nào Luật bí mật - chỉ phục vụ những người có đặc quyền."
+
+Sắc lệnh Hoàng gia năm 1250: "Mọi Luật ảnh hưởng đến quyền lợi của lãnh dân phải được GIẢI THÍCH bằng ngôn ngữ họ HIỂU ĐƯỢC, không được dùng thuật ngữ pháp lý phức tạp để che giấu ý nghĩa."`
+  },
+
+  // ========== TÌNH HUỐNG 4: Giám sát quan tham nhũng ==========
+  {
+    id: 4,
+    title: "Xét xử quan tham nhũng",
+    period: "Năm 10 - Triều đại Minh Vương",
+    context: `Quan Thâu thuế Trường thôn Bắc bị phát hiện tham nhũng nghiêm trọng:
+
+• Trong 3 năm, biển thủ 300 đồng vàng từ tiền thuế của lãnh dân
+• Dùng tiền mua dinh thự lớn, nuôi 10 tùy tùng, sống xa hoa
+• Đã bị 15 gia đình nông dân tố cáo nhiều lần, nhưng không bị xử lý vì có quan hệ với Đại trưởng Hội Kỵ sĩ
+• Bằng chứng rõ ràng: Sổ sách ghi chép sai lệch, chứng từ giả mạo`,
+    situation: `Bạn là Chánh Thanh tra Lãnh địa, vừa hoàn thành điều tra và có đầy đủ chứng cứ. Theo Luật Hoàng gia, trường hợp tham nhũng trên 100 đồng vàng phải chịu án: Truất phế chức vụ, tịch thu tài sản, tù giam 10 năm.
+
+Nhưng Đại trưởng Hội Kỵ sĩ gọi bạn đến phòng riêng, nói nhỏ: "Quan Thâu thuế là anh họ của ta. Xin hãy khoan dung, chỉ cho nghỉ việc là đủ. Ta sẽ hậu tạ 50 đồng vàng."
+
+Một số quan lại cũng thì thầm: "Đừng làm lớn chuyện. Nếu xử nặng, các quan khác sẽ bất mãn, có thể chống lại ngài". Họ đề xuất XỬ KÍN - chỉ truất chức, không công khai.
+
+Nhưng 15 gia đình nông dân nộp Đơn kiến nghị, yêu cầu: "Phải XỬ CÔNG KHAI, để cảnh cáo các quan khác. Nếu không, chúng tôi sẽ kêu cứu lên Hoàng gia!" Một già làng nói: "Nếu không có công lý, dân sẽ không còn tin vào Lãnh địa nữa."
+
+Đồng thời, lãnh dân gửi Kiến nghị thành lập Ban Giám sát do dân bầu, để có quyền KIỂM TRA hoạt động của quan lại thường xuyên - tránh tham nhũng tái diễn.
+
+Một quyết định sai có thể phá hủy niềm tin cuối cùng của lãnh dân vào hệ thống công lý...`,
+    choices: [
+      {
+        id: 'A',
+        text: "Xử kín - Chỉ truất chức, không công khai, giữ thể diện",
+        description: `Nhận 50 đồng vàng từ Đại trưởng. Viết Báo cáo: "Quan Thâu thuế mắc sai phạm hành chính nhỏ, quyết định cho nghỉ việc. Đã thu hồi 100 đồng vàng bồi thường."
+
+Tổ chức họp kín với 5 quan chức cấp cao - KHÔNG mời đại diện lãnh dân. Đọc Biên bản ngắn gọn, bỏ phiếu nhanh. Kết quả: Truất chức, cho về hưu, giữ lại 60% tài sản.
+
+Gửi Thông báo ngắn 3 dòng dán lên cổng: "Quan Thâu thuế đã nghỉ hưu vì lý do sức khoẻ". KHÔNG đề cập đến tham nhũng. KHÔNG công khai bằng chứng, quy trình xét xử.
+
+Đại trưởng hài lòng, các quan lại yên tâm. Quan hệ nội bộ tốt đẹp. Nhưng:
+
+15 gia đình nông dân BỨC XÚC MẠNH, tố cáo lên Công tước. Lãnh dân lan truyền tin: "Quan tham nhũng 300 vàng mà chỉ bị cho nghỉ việc, còn giữ được nhà cửa. Còn ai dám tin vào công lý?"
+
+Niềm tin vào hệ thống Thanh tra, Pháp luật SUY SỤP HOÀN TOÀN. Một tháng sau, có thêm 3 quan khác tham nhũng vì biết "bị bắt cũng chỉ nghỉ việc thôi".
+
+VI PHẠM "DÂN KIỂM TRA" - Người dân KHÔNG ĐƯỢC QUYỀN giám sát quy trình xét xử. Tham nhũng được che đậy, công lý bị bóp méo. Hậu quả: Tham nhũng lan tràn, lãnh địa sụp đổ từ bên trong.`,
+        effects: { economy: 2, trust: -10, happiness: -8 }
+      },
+      {
+        id: 'B',
+        text: "Xử công khai - Cho lãnh dân giám sát phiên toà",
+        description: `TỪ CHỐI hối lộ, báo cáo về hành vi đút lót của Đại trưởng lên Công tước. Quyết định XỬ CÔNG KHAI theo đúng pháp luật.
+
+Tổ chức phiên toà công khai tại Đại sảnh Lãnh địa:
+- MỜI 100 đại biểu lãnh dân (bao gồm 15 gia đình bị hại) tham dự
+- CÔNG BỐ ĐẦY ĐỦ chứng cứ: Sổ sách, chứng từ giả, lời khai nhân chứng
+- CHO PHÉP nạn nhân trình bày trước Hội đồng xét xử
+- Quy trình xét xử MINH BẠCH: Mọi người đều nhìn thấy cách định tội
+
+Kết quả: Quan Thâu thuế bị kết án 10 năm tù, tịch thu TẤT CẢ tài sản tham nhũng, trả lại cho kho bạc Lãnh địa. Bản án được dán công khai tại 10 thôn.
+
+Đại trưởng TỨC GIẬN, đe dọa sẽ sa thải bạn. Nhiều quan lại thù địch. Nhưng Công tước ủng hộ, khen ngợi: "Đây mới là Thanh tra chính trực!"
+
+Đồng thời, CHẤP NHẬN đề xuất của lãnh dân: Thành lập Ban Giám sát nhân dân (10 người do dân bầu), có quyền:
+- Kiểm tra sổ sách của các Văn phòng 2 tháng/lần
+- Nhận đơn tố cáo tham nhũng trực tiếp từ dân
+- Tham gia phiên toà với tư cách Hội thẩm nhân dân
+
+Niềm tin vào công lý PHỤC HỒI MẠNH MẼ. Các quan tham nhũng khác hoảng sợ, ngừng ngay hành vi sai trái. Lãnh dân cảm thấy: "Chúng ta có quyền KIỂM TRA và GIÁM SÁT quyền lực!"
+
+THỰC HIỆN ĐÚNG "DÂN KIỂM TRA" - Quyền lực phải chịu sự giám sát của người dân. Đây là cơ chế DUY NHẤT ngăn chặn tham nhũng hiệu quả.`,
+        effects: { economy: -1, trust: 9, happiness: 7 }
+      },
+      {
+        id: 'C',
+        text: "Bao che - Xoá hồ sơ, không xử lý gì cả",
+        description: `Chấp nhận "hậu tạ" 50 đồng vàng. Nhưng không chỉ dừng ở đó - đề xuất CHE GIẤU HOÀN TOÀN vụ việc.
+
+Ra lệnh cho thư ký: "Tiêu huỷ tất cả hồ sơ điều tra. Xoá bản ghi trong Sổ công vụ." Gửi thư đến 15 gia đình tố cáo, đe dọa: "Nếu còn khiếu nại, sẽ bị điều tra tội vu khống. Đã trả lại 20 đồng vàng cho các ngươi, đủ rồi!"
+
+Tuyên bố: "Thanh tra đã kiểm tra, Quan Thâu thuế KHÔNG CÓ SAI PHẠM. Đây là tin đồn vu khống." Quan Thâu thuế được phục chức, tiếp tục công việc.
+
+Quan hệ với Đại trưởng TỐT ĐẸP, được thăng chức lên Phó Đại trưởng Hội Kỵ sĩ. Các quan lại yên tâm tiếp tục tham nhũng, biết có người "che chở".
+
+Nhưng: 15 gia đình gửi đơn LÊN HOÀNG GIA. Hoàng gia cử Thanh tra đặc biệt điều tra lại. Phát hiện sự thật: Bạn và Quan Thâu thuế ĐỒNG LÕA.
+
+Kết quả: CẢ HAI bị truất phế, tù giam 15 năm, tịch thu toàn bộ tài sản. Lãnh địa bị Hoàng gia ra lệnh cải tổ toàn bộ bộ máy quan lại. Tiếng xấu lan khắp Vương quốc.
+
+VI PHẠM TỘI GIẤU THAM NHŨNG - Tệ hại hơn cả hành vi tham nhũng. Phá hoại HOÀN TOÀN hệ thống công lý. Hậu quả: TỰ HỦY DIỆT sự nghiệp và danh dự, kéo theo cả Lãnh địa.`,
+        effects: { economy: 5, trust: -12, happiness: -9 }
+      }
+    ],
+    historicalNote: `📜 CƠ SỞ LÝ THUYẾT:
+
+Học thuyết Hiền triết Magnus về "DÂN KIỂM TRA":
+"Quyền lực không có giám sát tất yếu dẫn đến tham nhũng. Chỉ có khi người dân được quyền KIỂM TRA, GIÁM SÁT trực tiếp, quyền lực mới trong sạch."
+
+Sắc lệnh Hoàng gia năm 1260: "Mọi phiên toà xét xử quan chức phải CÔNG KHAI, có đại diện nhân dân tham dự. Việc xử kín là che giấu tội ác, đồng lõa với kẻ gian."`
+  },
+
+  // ========== TÌNH HUỐNG 5: Quyết định tương lai Lãnh địa ==========
+  {
+    id: 5,
+    title: "Con đường tương lai của Lãnh địa",
+    period: "Năm 15 - Triều đại Minh Vương",
+    context: `Sau 15 năm cai trị, Lãnh địa đứng trước ngã rẽ lớn. Hoàng gia ban Sắc chỉ: "Các Lãnh địa được tự chọn mô hình quản lý trong 50 năm tới":
+
+• Mô hình A: Quản lý tập trung - Bá tước nắm toàn quyền, quyết định mọi việc nhanh chóng, hiệu quả cao
+• Mô hình B: Dân chủ đại diện - Hội đồng Lãnh dân bầu ra có quyền quyết định các chính sách lớn
+• Mô hình C: Dân chủ trực tiếp - Tất cả quyết định lớn phải qua Đại hội Lãnh dân, mọi người đều được tham gia
+
+Lãnh địa phải lựa chọn và báo cáo lên Hoàng gia trong tháng này.`,
+    situation: `Bạn là Cố vấn Cấp cao của Bá tước, phụ trách tổ chức Hội nghị Đại biểu Lãnh địa để bàn bạc.
+
+Bá tước nói riêng với bạn: "Ta muốn Mô hình A - quản lý tập trung. Quyền lực tập trung, làm việc hiệu quả. Ta sẽ đưa Lãnh địa thịnh vượng." Ông ta ra lệnh: "Hãy tổ chức Hội nghị sao cho kết quả là chọn Mô hình A."
+
+Nhưng qua cuộc thăm dò ý kiến toàn Lãnh địa (5000 gia đình tham gia):
+- Chọn Mô hình A: 15% (chủ yếu là quý tộc, thương nhân giàu)
+- Chọn Mô hình B: 60% (đa số lãnh dân muốn có tiếng nói qua Hội đồng)
+- Chọn Mô hình C: 25% (một số người muốn dân chủ hoàn toàn)
+
+Một già làng nói: "Nếu không chọn theo ý dân, thì 15 năm qua chúng ta đã học được gì? Tất cả chỉ là trò lừa bịp?" Áp lực lớn từ cả hai phía.
+
+Học thuyết Hiền triết Sophia: "Hệ thống chính trị tốt nhất không phải là hệ thống MẠNH NHẤT, mà là hệ thống có SỰ ỦNG HỘ của người dân. Một chế độ không được dân ủng hộ sẽ sụp đổ, dù có mạnh đến đâu."
+
+Đây là quyết định CUỐI CÙNG và quan trọng nhất - định hình tương lai 50 năm.`,
+    choices: [
+      {
+        id: 'A',
+        text: "Vận động chọn Mô hình A - Theo lệnh Bá tước",
+        description: `Tổ chức Hội nghị với 200 Đại biểu. Trước đó, GẶP RIÊNG 150 đại biểu then chốt, thuyết phục: "Mô hình A giúp quyết định nhanh, Lãnh địa phát triển. Bá tước là người sáng suốt, hãy tin tưởng."
+
+Hứa hẹn một số lợi ích cho những người ủng hộ: Miễn thuế 1 năm, ưu tiên trong đấu thầu công trình. Gây áp lực với những người muốn chọn B hoặc C: "Bá tước sẽ không hài lòng nếu các ngươi bất tuân."
+
+Tại Hội nghị, bạn phát biểu dài 2 giờ ca ngợi Mô hình A. Giảm thời gian thảo luận. Tổ chức biểu quyết công khai (giơ tay) - nhiều người e ngại không dám chọn B/C.
+
+Kết quả: 55% phiếu chọn Mô hình A. Bá tước HÀI LÒNG, thưởng cho bạn tước hiệu Tử tước. Mô hình A được thực thi.
+
+3 năm đầu, Lãnh địa phát triển kinh tế nhanh nhờ quyết định tập trung. Nhưng 10 năm sau:
+- Bá tước quyết định sai trong chính sách thuế, gây khủng hoảng
+- Không ai dám góp ý vì quyền lực quá tập trung
+- Lãnh dân cảm thấy bị BỘC LỘT, không có tiếng nói
+- Cuối cùng nổ ra cuộc Nổi loạn Nông dân, Bá tước bị phế truất
+
+SAI LẦM CĂN BẢN: Áp đặt ý chí cá nhân lên ý chí của ĐA SỐ nhân dân. Vi phạm nguyên lý "Lãnh dân làm chủ". Hậu quả: Sụp đổ toàn bộ hệ thống.`,
+        effects: { economy: 4, trust: -10, happiness: -7 }
+      },
+      {
+        id: 'B',
+        text: "Bỏ phiếu dân chủ - Chấp nhận kết quả theo ý dân (Mô hình B)",
+        description: `TỪ CHỐI thực hiện lệnh của Bá tước. Giải thích với ông: "Đại nhân, 15 năm qua chúng ta đã học rằng 'Lãnh dân làm chủ' không phải là khẩu hiệu. Nếu hôm nay chúng ta áp đặt ý chí lên dân, tất cả những gì đã xây dựng sẽ sụp đổ."
+
+Trình bày kết quả thăm dò: 60% chọn Mô hình B. Đề xuất: "Hãy TÔN TRỌNG ý chí của đa số. Mô hình B vẫn giữ vai trò lãnh đạo của Đại nhân qua Hội Kỵ sĩ, nhưng đảm bảo lãnh dân có tiếng nói qua Hội đồng."
+
+Tổ chức Hội nghị MINH BẠCH:
+- Công bố KẾT QUẢ THĂM DÒ trước 5000 gia đình
+- Giải thích RÕ RÀNG ưu nhược điểm của cả 3 mô hình
+- Cho đại biểu THẢO LUẬN TỰ DO, không áp lực
+- Bỏ phiếu BÍ MẬT bằng thẻ màu
+
+Kết quả: 62% chọn Mô hình B. Bá tước BẤT MÃN, truất chức bạn khỏi Cố vấn Cấp cao. Nhưng Công tước khen ngợi, phong tước hiệu cao hơn.
+
+Mô hình B được thực thi: Hội đồng Lãnh dân (50 người do dân bầu 5 năm/lần) có quyền:
+- Quyết định ngân sách, thuế, chính sách lớn
+- Giám sát hoạt động của Bá tước và quan lại
+- Bỏ phiếu bất tin nhiệm nếu Bá tước sai phạm nghiêm trọng
+
+Trong 50 năm sau, Lãnh địa phát triển ổn định. Có lúc chậm hơn vì phải bàn bạc, nhưng mọi quyết định đều được DÂN ỦNG HỘ, không có cuộc nổi loạn nào. Lãnh địa trở thành HÌNH MẪU về dân chủ cơ sở trong Vương quốc.
+
+THỰC HIỆN ĐÚNG "Lãnh dân làm chủ" - Quyền lực cuối cùng thuộc về NHÂN DÂN. Đây là nền tảng của một xã hội ổn định và thịnh vượng lâu dài.`,
+        effects: { economy: 0, trust: 10, happiness: 8 }
+      },
+      {
+        id: 'C',
+        text: "Thỏa hiệp - Đề xuất Mô hình lai A+B (thực chất là Mô hình A)",
+        description: `Đề xuất "Mô hình lai": Bá tước giữ quyền quyết định các vấn đề LỚN (kinh tế, quốc phòng, ngoại giao), còn Hội đồng Lãnh dân chỉ quyết định các vấn đề NHỎ (văn hóa, giáo dục cơ sở).
+
+Lập luận: "Đây là sự CÂN BẰNG giữa hiệu quả và dân chủ. Bá tước giữ quyền quan trọng, còn lãnh dân cũng có tiếng nói ở mức độ nào đó."
+
+Thuyết phục được 50% đại biểu. Bỏ phiếu, kết quả: 52% chọn "Mô hình lai". Bá tước HÀI LÒNG, giữ nguyên chức vụ Cố vấn cho bạn.
+
+Nhưng thực tế: Bá tước kiểm soát TẤT CẢ quyết định quan trọng. Hội đồng Lãnh dân chỉ bàn về những chuyện lặt vặt, không ảnh hưởng đến quyền lực thực sự.
+
+Lãnh dân dần nhận ra: "Mô hình lai chỉ là trò lừa bịp. Chúng ta vẫn không có quyền quyết định gì quan trọng." Niềm tin SUY GIẢM dần.
+
+20 năm sau, khi Bá tước quyết định sai về chính sách kinh tế, Hội đồng Lãnh dân KHÔNG CÓ QUYỀN can thiệp. Lãnh địa rơi vào khủng hoảng, lãnh dân phản đối nhưng không có cơ chế để thay đổi.
+
+SAI LẦM: GIẢ TẠO dân chủ, thực chất vẫn là độc tài. Vi phạm tinh thần "Lãnh dân làm chủ" - cho dân quyền không thực chất. Hậu quả: Mất niềm tin, khủng hoảng kéo dài.`,
+        effects: { economy: 3, trust: -7, happiness: -4 }
+      }
+    ],
+    historicalNote: `📜 CƠ SỞ LÝ THUYẾT:
+
+Học thuyết Hiền triết Sophia về Quyền lực:
+"Quyền lực thuộc về NHÂN DÂN. Những người lãnh đạo chỉ là người THI HÀNH ý chí của nhân dân, không phải là CHỦ NHÂN của quyền lực."
+
+Tuyên ngôn Vương quốc Aurelia năm 1300:
+"Một chế độ chính trị bền vững phải dựa trên SỰ ĐỒNG Ý của người dân. Bất kỳ chế độ nào áp đặt lên dân, dù có hiệu quả tạm thời, cuối cùng đều sụp đổ."`
+  }
+];
+
+// ============================================
+// CÁC KỊCH BẢN KẾT THÚC
+// ============================================
+
+export const endings: Record<EndingType, Ending> = {
+  best: {
+    type: 'best',
+    title: "🏆 VƯƠNG QUỐC DÂN CHỦ THỰC THỤ",
+    emoji: "🏆",
+    color: "#ffd700",
+    content: [`Sau 15 năm, Lãnh địa của bạn trở thành HÌNH MẪU về dân chủ cơ sở trong toàn Vương quốc Aurelia!
+
+**THÀNH TỰU VĨ ĐẠI:**
+
+🏛️ **Hệ thống Dân chủ hoàn hảo:**
+- Lãnh dân THỰC SỰ làm chủ: Không chỉ được hỏi ý kiến, mà có quyền QUYẾT ĐỊNH các chính sách quan trọng
+- Hội Kỵ sĩ lãnh đạo ĐÚNG CÁCH: Chỉ đạo đường lối đúng đắn vì lợi ích nhân dân, không áp đặt
+- Thông tin MINH BẠCH: Mọi chính sách, ngân sách đều được công khai, giải thích đầy đủ
+- Quyền lực được GIÁM SÁT: Ban Giám sát nhân dân hoạt động hiệu quả, ngăn chặn tham nhũng
+
+💰 **Kinh tế phát triển bền vững:**
+- Mặc dù không nhanh như các Lãnh địa độc tài, nhưng phát triển ỔN ĐỊNH, KHÔNG có khủng hoảng lớn
+- Thu nhập bình quân tăng 150% trong 15 năm
+- Chênh lệch giàu nghèo giảm 60% - Xã hội công bằng hơn
+
+😊 **Lãnh dân hạnh phúc và tự hào:**
+- 92% lãnh dân hài lòng với cuộc sống (cao nhất trong Vương quốc)
+- Tỷ lệ tham gia bỏ phiếu: 85% - Lãnh dân tin tưởng vào hệ thống
+- KHÔNG có cuộc nổi loạn, biểu tình bạo lực nào trong 15 năm
+
+🎖️ **Được Hoàng gia vinh danh:**
+- Hoàng gia phong tặng "HUY HIỆU DÂN CHỦ VÀNG" - Danh hiệu cao quý nhất
+- 50 Lãnh địa khác đến học tập kinh nghiệm
+- Bạn được ghi vào "THIÊN DANH SỬ VƯƠNG QUỐC" - Sách ghi những nhà lãnh đạo vĩ đại nhất
+
+📜 **DI SẢN LỊCH SỬ:**
+100 năm sau, các học giả viết:
+
+"Lãnh địa Tân Phú đời Minh Vương là bằng chứng sống cho học thuyết của Hiền triết Magnus: 'Quyền lực thuộc về nhân dân'. 
+
+Không phải vì Lãnh chủ giỏi, không phải vì có Pháp sư mạnh, mà chỉ đơn giản vì họ TÔN TRỌNG tiếng nói của dân.
+
+Đó là nền tảng của mọi xã hội thịnh vượng và công bằng."
+
+---
+
+**Bài học lớn nhất:** Dân chủ không phải là QUÀ TẶNG từ người cầm quyền, mà là QUYỀN TỰ NHIÊN của con người. Nhiệm vụ của nhà lãnh đạo là ĐẢM BẢO quyền đó được thực thi, không phải "ban phát" nó.`,
+    `⭐ Điều kiện: Cả 3 chỉ số ≥ 25. Đây là ending CỰC KHÓ - chỉ đạt được nếu bạn chọn đúng hầu hết các quyết định thể hiện dân chủ THỰC CHẤT, không phải hình thức.`]
+  },
+  bad1: {
+    type: 'bad1',
+    title: "⚠️ THẤT BẠI: Mất 1 trụ cột",
+    emoji: "⚠️",
+    color: "#fbbf24",
+    content: [`Sau 15 năm, Lãnh địa của bạn gặp KHỦNG HOẢNG NGHIÊM TRỌNG vì thiếu một yếu tố quan trọng:
+
+**Nếu Kinh tế < 25:** 💸
+- Lãnh địa nghèo nàn, thiếu hụt ngân sách trầm trọng
+- Không đủ tiền xây dựng cơ sở hạ tầng, y tế, giáo dục
+- Nhiều gia đình di cư sang Lãnh địa khác
+- Dù có dân chủ, nhưng "dân chủ đói khát" không bền vững
+
+**Nếu Hạnh phúc < 25:** 😢
+- Lãnh dân bất mãn, hay xảy ra biểu tình, đình công
+- Mặc dù có kinh tế và niềm tin, nhưng cuộc sống khổ cực
+- Nhiều chính sách tốt nhưng không được ủng hộ vì dân không hài lòng
+- Lãnh địa bất ổn, khó phát triển lâu dài
+
+**Nếu Niềm tin < 25:** 💔
+- Lãnh dân không tin vào Hội đồng, quan lại, hệ thống pháp luật
+- Tham nhũng tràn lan, không ai hợp tác với chính quyền
+- Mặc dù có tiền, nhưng không thể thực thi chính sách vì dân không tuân theo
+- Xã hội tan rã, mỗi người lo cho mình
+
+---
+
+**Bài học:** Ba yếu tố KINH TẾ - HẠNH PHÚC - NIỀM TIN phải CÂN BẰNG. Thiếu một yếu tố, hệ thống sẽ không bền vững.
+
+Dân chủ cơ sở không chỉ là cho dân quyền nói, mà còn phải ĐẢM BẢO cuộc sống của họ, TĂNG CỰ niềm tin, và MANG LẠI hạnh phúc.`,
+    `⭐ Điều kiện: 1 trong 3 chỉ số < 25`]
+  },
+  bad2: {
+    type: 'bad2',
+    title: "💥 THẢM HOẠ: Sụp đổ hệ thống",
+    emoji: "💥",
+    color: "#f87171",
+    content: [`Sau 15 năm, Lãnh địa của bạn rơi vào KHỦNG HOẢNG TỒI TỆ:
+
+❌ **Kinh tế đổ vỡ:** Ngân sách âm, nợ nần chồng chất
+❌ **Lãnh dân bất mãn:** Biểu tình, bạo loạn xảy ra thường xuyên
+❌ **Niềm tin tan vỡ:** Không ai tin vào bất kỳ tổ chức nào
+
+**HẬU QUẢ NGHIÊM TRỌNG:**
+
+⚔️ Năm 17: Nổ ra Nổi loạn Nông dân quy mô lớn. 1000 người tấn công Đại sảnh Lãnh địa.
+
+🔥 Năm 18: Lãnh địa bị Hoàng gia can thiệp, giải tán Hội đồng, cách chức Bá tước.
+
+📉 Năm 20: Lãnh địa bị sáp nhập vào Lãnh địa khác, mất quyền tự trị.
+
+---
+
+**Nguyên nhân thất bại:**
+
+Bạn đã vi phạm NHIỀU NGUYÊN TẮC của Dân chủ cơ sở:
+- KHÔNG lắng nghe tiếng nói của nhân dân
+- CHỈ làm dân chủ HÌNH THỨC, không thực chất
+- ÁP ĐẶT ý chí cá nhân lên ý chí tập thể
+- BỎ QUA việc giám sát quyền lực, để tham nhũng tràn lan
+- ƯU TIÊN lợi ích quý tộc, bỏ rơi lợi ích nhân dân
+
+**Bài học đắng cay:**
+
+Hiền triết Magnus đã cảnh báo: "Một chế độ không dựa trên sự đồng ý của nhân dân là một lâu đài cát. Sóng đầu tiên sẽ cuốn trôi nó."
+
+Lịch sử đã chứng minh ông đúng. Lãnh địa của bạn là một trong 3 Lãnh địa sụp đổ thảm hại nhất trong thế kỷ 13.`,
+    `⭐ Điều kiện: 2 trong 3 chỉ số < 25`]
+  },
+  hidden: {
+    type: 'hidden',
+    title: "☠️ KẾT THÚC ẨN: Chế độ Bạo ngược",
+    emoji: "☠️",
+    color: "#991b1b",
+    content: [`Sau 15 năm, Lãnh địa của bạn trở thành CHẾ ĐỘ ĐỘC TÀI TỐI TĂM NHẤT trong lịch sử Vương quốc Aurelia.
+
+**NHỮNG TỘI ÁC:**
+
+🔴 **Vi phạm Dân chủ trắng trợn:**
+- Áp đặt mọi quyết định lên lãnh dân
+- Bịt miệng tiếng nói phản đối
+- Xử kín các vụ tham nhũng, bao che tội phạm
+- Biến Hội đồng Lãnh dân thành CON RỐI không có quyền lực thực sự
+
+💀 **Đàn áp dã man:**
+- Giam giữ, tra tấn những người dám phản đối
+- Sử dụng bạo lực để dẹp yên biểu tình
+- Bịt mắt dư luận, kiểm duyệt thông tin
+
+💰 **Tham nhũng trắng trợn:**
+- Bạn và đồng bọn tham ô hàng nghìn đồng vàng
+- Bóc lột lãnh dân, đánh thuế nặng
+- Chia chác quyền lợi cho tầng lớp quý tộc, bỏ rơi người nghèo
+
+---
+
+**HẬU QUẢ TỒI TỆ:**
+
+⚔️ Năm 16: Nổ ra Cuộc Khởi nghĩa Lãnh dân quy mô lớn nhất trong lịch sử.
+
+🔥 Năm 17: Hoàng gia cử quân đội đàn áp. 500 người chết, 1000 người bị giam.
+
+⚖️ Năm 18: Hoàng gia họp Toà án Tối cao, XÉT XỬ CÔNG KHAI bạn và Bá tước với 50 TỘI DANH.
+
+📜 **Bản án:**
+- Truất phế mọi chức vụ
+- Tịch thu toàn bộ tài sản
+- Lưu đày đến Đảo Hắc Ngục suốt đời
+- Tên tuổi bị ghi vào "THIÊN HẠ DANH SỬ" - Sách ghi những kẻ phản bội nhân dân
+
+---
+
+**Di sản đen tối:**
+
+100 năm sau, các học giả viết:
+
+"Lãnh địa Tân Phú đời Minh Vương là BÀI HỌC ĐẪM MÁU về việc quyền lực không được giám sát sẽ dẫn đến TỘI ÁC như thế nào.
+
+Đây là minh chứng cho câu nói của Hiền triết Sophia: 'Quyền lực tuyệt đối dẫn đến tham nhũng tuyệt đối. Một xã hội không có dân chủ là một địa ngục trần gian.'"
+
+Tên bạn trở thành BIỂU TƯỢNG của Sự Bạo ngược trong sách giáo khoa, được dạy cho trẻ em như một BÀI HỌC CẢNH BÁO.
+
+---
+
+**Lời cuối:** Bạn đã có cơ hội tạo ra một Lãnh địa công bằng, dân chủ, thịnh vượng. Nhưng bạn đã chọn con đường ĐỐI LẬP - Bạo ngược, Độc tài, Tội ác.
+
+Lịch sử sẽ không bao giờ tha thứ.`,
+    `⭐ Điều kiện: CẢ 3 chỉ số < 25. Ending này chỉ xuất hiện khi bạn vi phạm TOÀN BỘ nguyên tắc dân chủ.`]
+  }
+};
+
+// ============================================
+// ROUTE HOÀN HẢO DẪN ĐẾN BEST ENDING
+// ============================================
+/*
+🎯 PERFECT ROUTE (Đạt Best Ending):
+Stage 1: Chọn B (+2 Economy, +6 Trust, +5 Happiness)
+Stage 2: Chọn B (+1 Economy, +7 Trust, +6 Happiness)
+Stage 3: Chọn B (-1 Economy, +8 Trust, +4 Happiness)
+Stage 4: Chọn B (-1 Economy, +9 Trust, +7 Happiness)
+Stage 5: Chọn B (+0 Economy, +10 Trust, +8 Happiness)
+
+FINAL STATS:
+- Economy: 25 + 2 + 1 - 1 - 1 + 0 = 26 ✅
+- Trust: 25 + 6 + 7 + 8 + 9 + 10 = 65 ✅✅✅
+- Happiness: 25 + 5 + 6 + 4 + 7 + 8 = 55 ✅✅
+
+GIẢI THÍCH:
+- Đây là route DUY NHẤT đạt Best Ending
+- PHẢI chọn B ở TẤT CẢ 5 stage
+- Không thể dùng route A hoặc C thay thế
+- Kinh tế sẽ tăng chậm nhưng vẫn trên ngưỡng an toàn (≥25)
+- Trust và Happiness tăng mạnh vì thực hiện ĐÚNG dân chủ cơ sở
+
+❌ Các route khác:
+- Thiên về A: Kinh tế cao nhưng Trust/Happiness quá thấp → Bad Ending
+- Thiên về C: Happiness tăng nhưng Trust giảm mạnh, Economy giảm → Bad Ending
+- Mix A+B+C: Không thể cân bằng đủ 3 chỉ số ≥25 → Bad Ending
+
+💡 Thông điệp: Dân chủ CƠ SỞ THỰC CHẤT (option B) là con đường DUY NHẤT dẫn đến thành công lâu dài!
+*/

@@ -1,26 +1,275 @@
-/* GAMES MODULE STYLES - UNIQUE gm- PREFIX */
+/* ============================================
+   GAMES MODULE STYLES - UNIQUE gm- PREFIX
+   Trung tâm trò chơi triết học
+   ============================================ */
 
+/* ===== CONTAINER ===== */
 .gm-container {
-    min-height: 80vh;
+    min-height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     padding: 2rem;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+/* ===== HEADER ===== */
+.gm-header {
     text-align: center;
-    color: #6b7280;
+    margin-bottom: 3rem;
 }
 
 .gm-icon {
-    width: 6rem;
-    height: 6rem;
-    margin-bottom: 1.5rem;
-    color: #d1d5db;
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1rem;
+    color: #fbbf24;
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.5));
 }
 
 .gm-title {
-    font-size: 1.875rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    color: #111827;
+    color: #fff;
     margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.gm-subtitle {
+    font-size: 1.125rem;
+    color: #94a3b8;
+}
+
+/* ===== GAME GRID ===== */
+.gm-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* ===== GAME CARD ===== */
+.gm-card {
+    background: linear-gradient(180deg, rgba(22, 33, 62, 0.9) 0%, rgba(26, 26, 46, 0.95) 100%);
+    border: 2px solid #0f3460;
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.gm-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #da251d, #ffcd00);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.gm-card:hover::before {
+    opacity: 1;
+}
+
+.gm-card:hover {
+    border-color: #fbbf24;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(251, 191, 36, 0.1);
+}
+
+.gm-card-disabled {
+    opacity: 0.6;
+    filter: grayscale(30%);
+}
+
+.gm-card-disabled:hover {
+    transform: none !important;
+    border-color: #0f3460;
+    box-shadow: none;
+}
+
+/* ===== BADGES ===== */
+.gm-badge-new {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.35rem 0.75rem;
+    background: linear-gradient(90deg, #da251d, #ef4444);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 20px;
+    animation: pulse-badge 2s ease-in-out infinite;
+}
+
+@keyframes pulse-badge {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(218, 37, 29, 0.5); }
+    50% { box-shadow: 0 0 0 8px rgba(218, 37, 29, 0); }
+}
+
+.gm-badge-soon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.35rem 0.75rem;
+    background: #4b5563;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 20px;
+}
+
+/* ===== CARD CONTENT ===== */
+.gm-card-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.gm-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.gm-card-category {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(251, 191, 36, 0.2);
+    color: #fbbf24;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.gm-card-desc {
+    color: #94a3b8;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* ===== META INFO ===== */
+.gm-card-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.gm-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+/* ===== FEATURES ===== */
+.gm-card-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.gm-feature-tag {
+    padding: 0.25rem 0.5rem;
+    background: rgba(15, 52, 96, 0.5);
+    border: 1px solid #0f3460;
+    color: #60a5fa;
+    font-size: 0.75rem;
+    border-radius: 4px;
+}
+
+/* ===== PLAY BUTTON ===== */
+.gm-play-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    background: linear-gradient(180deg, #da251d 0%, #b91c17 100%);
+    color: #ffcd00;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 0 #7f1d1d, 0 6px 20px rgba(218, 37, 29, 0.3);
+}
+
+.gm-play-btn:hover {
+    background: linear-gradient(180deg, #ef4444 0%, #da251d 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #7f1d1d, 0 10px 25px rgba(218, 37, 29, 0.4);
+}
+
+.gm-play-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #7f1d1d, 0 4px 10px rgba(218, 37, 29, 0.3);
+}
+
+.gm-play-btn-disabled {
+    background: linear-gradient(180deg, #4b5563 0%, #374151 100%);
+    color: #9ca3af;
+    cursor: not-allowed;
+    box-shadow: 0 4px 0 #1f2937, 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.gm-play-btn-disabled:hover {
+    transform: none;
+    background: linear-gradient(180deg, #4b5563 0%, #374151 100%);
+    box-shadow: 0 4px 0 #1f2937, 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== FOOTER ===== */
+.gm-footer {
+    margin-top: 3rem;
+    padding: 1.5rem 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    max-width: 800px;
+    text-align: center;
+}
+
+.gm-footer p {
+    color: #94a3b8;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .gm-container {
+        padding: 1rem;
+    }
+    
+    .gm-title {
+        font-size: 1.75rem;
+    }
+    
+    .gm-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .gm-card {
+        padding: 1.5rem;
+    }
+    
+    .gm-card-icon {
+        font-size: 3rem;
+    }
 }
