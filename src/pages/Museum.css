@@ -127,13 +127,48 @@
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
 }
 
-.ms-card-cta {
+/* CTA Button - Event Item Specific Styling */
+.ms-event-item .ms-event-cta {
+  color: #d4af37;
+  margin-top: 0.75rem;
   display: inline-flex;
-  margin-top: 1rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
   text-transform: uppercase;
-  color: #f8e6b6;
+  letter-spacing: 0.08em;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.4rem;
+  background: rgba(212, 175, 55, 0.08);
+  position: relative;
+  min-width: max-content;
+}
+
+/* Override for event items - detailed timeline */
+.ms-event-item .ms-event-cta {
+  color: #d4af37;
+  margin-top: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  font-size: 0.8rem !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em !important;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.4rem;
+  background: rgba(212, 175, 55, 0.08);
+  position: relative;
 }
 
 .ms-timeline-top {
@@ -211,12 +246,12 @@
 .ms-modal-card {
   position: relative;
   z-index: 1;
-  width: min(860px, 100%);
+  width: min(680px, 95%);
   background: #1d120c;
   border-radius: 1.5rem;
   border: 1px solid rgba(212, 175, 55, 0.25);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
-  padding: 2rem;
+  padding: 1.5rem;
   display: grid;
   gap: 1.5rem;
 }
@@ -341,4 +376,369 @@
 .ms-highlight-card p {
   color: rgba(255, 255, 255, 0.75);
   line-height: 1.6;
+}
+
+/* DETAILED TIMELINE STYLES */
+.ms-detailed-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Center vertical line for timeline */
+.ms-detailed-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.6), rgba(212, 175, 55, 0.2));
+}
+
+.ms-event-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.4rem;
+  padding: 1.35rem;
+  background: linear-gradient(135deg, rgba(139, 0, 0, 0.2), rgba(139, 0, 0, 0.1));
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  position: relative;
+  width: 47%;
+  margin-bottom: 2.5rem;
+  padding-top: 1.85rem;
+}
+
+/* Alternate left and right positioning */
+.ms-event-item:nth-child(odd) {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.ms-event-item:nth-child(even) {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* Timeline dot for events - positioned on center line */
+.ms-event-item::after {
+  content: '';
+  position: absolute;
+  width: 1.4rem;
+  height: 1.4rem;
+  background: #d4af37;
+  border: 4px solid #8b0000;
+  border-radius: 50%;
+  top: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.3), inset 0 0 0 2px #1d120c;
+}
+
+.ms-event-item:nth-child(even)::after {
+  transform: translateX(-50%);
+}
+
+.ms-event-item:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, rgba(139, 0, 0, 0.35), rgba(139, 0, 0, 0.2));
+  border: 1px solid rgba(212, 175, 55, 0.7);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+}
+
+.ms-event-year {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.95rem;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(212, 175, 55, 0.2));
+  color: #f8e6b6;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  width: fit-content;
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  box-shadow: inset 0 1px 2px rgba(212, 175, 55, 0.2);
+}
+
+.ms-event-item h4 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0.2rem 0 0 0;
+  line-height: 1.4;
+  letter-spacing: 0.4px;
+  font-family: 'Playfair Display', serif;
+}
+
+.ms-event-item p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin: 0.3rem 0 0 0;
+  font-weight: 400;
+}
+
+.ms-event-item .ms-event-cta::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #d4af37;
+  transition: width 0.25s ease;
+}
+
+.ms-event-item .ms-event-cta svg {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+  display: inline-block;
+}
+
+.ms-event-item:hover .ms-event-cta {
+  color: #f8e6b6;
+  background: rgba(212, 175, 55, 0.15);
+  padding-right: 0.8rem;
+}
+
+.ms-event-item:hover .ms-event-cta::before {
+  width: 100%;
+}
+
+.ms-event-item:hover .ms-event-cta svg {
+  transform: translateX(4px);
+}
+
+/* LARGE MODAL STYLES FOR DETAILED EVENTS */
+.ms-modal-large {
+  width: min(680px, 95%);
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.ms-modal-large .ms-modal-header {
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.ms-modal-period {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  background: rgba(139, 0, 0, 0.3);
+  color: #ff6b6b;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.ms-modal-location {
+  display: block;
+  color: rgba(255, 255, 255, 0.6) !important;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.ms-modal-header h3 {
+  margin-top: 0.75rem;
+}
+
+.ms-modal-body {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.ms-modal-description,
+.ms-modal-keypoints,
+.ms-modal-figures,
+.ms-modal-significance {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.ms-modal-description h4,
+.ms-modal-keypoints h4,
+.ms-modal-figures h4,
+.ms-modal-significance h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f8e6b6;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin: 0;
+}
+
+.ms-modal-description p,
+.ms-modal-significance p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.ms-modal-keypoints ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.ms-modal-keypoints li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.ms-modal-keypoints svg {
+  flex-shrink: 0;
+  color: #d4af37;
+  margin-top: 0.15rem;
+}
+
+.ms-figures-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.ms-figure-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: #f8e6b6;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+.ms-figure-badge svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  color: #d4af37;
+}
+
+/* MEDIA SECTION IN DETAILED MODAL */
+.ms-modal-large .ms-modal-media {
+  display: grid;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.ms-modal-media {
+  display: grid;
+  gap: 1rem;
+}
+
+.ms-modal-image {
+  border-radius: 1rem;
+  border: 1px dashed rgba(212, 175, 55, 0.6);
+  background: rgba(255, 255, 255, 0.05);
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+  gap: 0.35rem;
+  padding: 1rem;
+}
+
+.ms-modal-image-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #d4af37;
+}
+
+.ms-modal-source {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 0.9rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ms-modal-source span {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.65rem;
+  color: #f8e6b6;
+  margin-bottom: 0.35rem;
+}
+
+.ms-modal-source p {
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .ms-detailed-timeline {
+    padding: 1rem 0;
+  }
+
+  .ms-detailed-timeline::before {
+    left: 1.25rem;
+    transform: translateX(0);
+  }
+
+  .ms-event-item {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 1.5rem;
+    padding-left: 3rem;
+  }
+
+  .ms-event-item::after {
+    left: 0.6rem;
+    transform: translateX(-50%);
+  }
+
+  .ms-event-item:nth-child(even)::after {
+    transform: translateX(-50%);
+  }
+
+  .ms-modal-large {
+    width: 95%;
+    max-height: 85vh;
+    padding: 1.25rem;
+  }
+
+  .ms-event-item h4 {
+    font-size: 1rem;
+  }
+
+  .ms-modal-body {
+    gap: 1.25rem;
+  }
+
+  .ms-modal-header {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
 }

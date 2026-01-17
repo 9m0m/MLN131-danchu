@@ -22,9 +22,8 @@ export function Header() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     <Link to="/" className="flex items-center space-x-3 group">
-                        <div className="bg-white p-1 rounded-lg overflow-hidden w-auto h-14 flex items-center justify-center border-2 border-[#d4af37]">
-                             {/* Logo from public folder - User provided */}
-                            <img src="/logo.png" alt="MLN131 Logo" className="h-full w-auto object-contain" />
+                        <div className="flex items-center justify-center flex-shrink-0" style={{ width: '56px', height: '56px', aspectRatio: '1' }}>
+                            <img src="/logo3.png" alt="MLN131 Logo" className="max-w-full max-h-full object-contain" />
                         </div>
                         <div className="flex flex-col">
                             <span className="font-display font-bold text-lg leading-none tracking-wide text-[#d4af37]">MLN131</span>

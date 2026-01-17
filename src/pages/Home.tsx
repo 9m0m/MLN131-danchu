@@ -1,4 +1,4 @@
-import { ChevronDown, Users, Activity, Globe, MessageSquare, BookOpen } from 'lucide-react';
+import { ChevronDown, Users, BookOpen } from 'lucide-react';
 import { motion } from 'framer-motion';
 import './Home.css'; // MODULAR CSS
 
@@ -35,8 +35,7 @@ export function Home() {
                         transition={{ delay: 0.4 }}
                         className="hm-hero-desc"
                     >
-                        Dự án được tạo ra để biến kiến thức dân chủ cơ sở thành trải nghiệm học tập sống động,
-                        dễ hiểu, dễ áp dụng trong thực tiễn.
+                        Tìm hiểu về quyền và trách nhiệm của công dân trong việc tham gia xây dựng và giám sát chính quyền địa phương. Học thông qua flipbook, quiz và trò chơi tương tác.
                     </motion.p>
 
                     <motion.div
@@ -58,7 +57,7 @@ export function Home() {
                 </div>
             </section>
 
-            {/* Story Section */}
+            {/* Story Section - Why Create This Product */}
             <section id="story" className="hm-section hm-white-section">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
@@ -71,155 +70,115 @@ export function Home() {
 
                     <div className="hm-grid-3">
                         <div className="hm-feat-card">
-                            <div className="hm-feat-number">1</div>
+                            <div className="hm-feat-number">01</div>
                             <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Nguồn gốc & Mục tiêu</h3>
                             <p className="text-gray-700 leading-relaxed font-serif">
-                                Sản phẩm ra đời để hệ thống hóa nội dung MLN131, giúp người học tiếp cận lý luận một cách
-                                trực quan thay vì chỉ đọc văn bản thuần túy.
+                                Sản phẩm ra đời để hệ thống hóa nội dung MLN131, giúp người học tiếp cận lý luận một cách trực quan thay vì chỉ đọc văn bản thuần túy.
                             </p>
                         </div>
 
                         <div className="hm-feat-card">
-                            <div className="hm-feat-number alt">2</div>
+                            <div className="hm-feat-number alt">02</div>
                             <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Vì sao nên sử dụng?</h3>
                             <p className="text-gray-700 leading-relaxed font-serif">
-                                Bạn có thể học nhanh qua flipbook, ôn tập bằng quiz và tra cứu ý chính một cách mạch lạc,
-                                giảm tải thời gian ghi nhớ rời rạc.
+                                Bạn có thể học nhanh qua flipbook, ôn tập bằng quiz và tra cứu ý chính một cách mạch lạc hơn, giảm tải thời gian ghi nhớ rời rạc.
                             </p>
                         </div>
 
                         <div className="hm-feat-card">
-                            <div className="hm-feat-number">3</div>
+                            <div className="hm-feat-number">03</div>
                             <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Tác dụng vượt ngoài giáo trình</h3>
                             <p className="text-gray-700 leading-relaxed font-serif">
-                                Tăng khả năng phản biện, kết nối thực tiễn địa phương và hình thành tư duy công dân số chủ động,
-                                không chỉ dừng ở việc đọc tài liệu giấy.
+                                Tăng khả năng phản biện, kết nối thực tiễn địa phương và hình thành tư duy công dân chủ động, không chỉ dừng ở việc đọc tài liệu giấy.
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Evaluation & Solutions Section */}
-            <section id="evaluation" className="hm-section hm-bg-section">
+            {/* Topic Selection Section */}
+            <section className="hm-section hm-white-section">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="hm-section-title uppercase tracking-tight">Đánh giá & Giải pháp</h2>
-                        <p className="text-xl text-gray-600 font-serif italic text-center">"Để tiếng nói người dân thực sự trở thành nguồn động lực phát triển"</p>
+                        <h2 className="hm-section-title">Tại sao chọn "Dân chủ Cơ sở"?</h2>
+                        <p className="text-xl text-gray-600 font-serif italic text-center mt-4">
+                            "Dân là gốc rễ của nước, mọi việc phải dân làm chủ"
+                        </p>
                         <div className="hm-divider mt-6"></div>
                     </div>
 
-                    <div className="grid lg:grid-cols-2 gap-12">
-                        <div className="space-y-8">
-                            <div className="hm-eval-card good">
-                                <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display flex items-center">
-                                    <span className="bg-green-100 text-green-600 p-2 rounded-lg mr-3">✓</span>
-                                    Ưu điểm & Kết quả
-                                </h3>
-                                <ul className="space-y-3 text-gray-700 font-serif list-disc pl-5">
-                                    <li>Nhận thức về dân chủ của người dân ngày càng được nâng cao.</li>
-                                    <li>Cơ chế "Dân biết, dân bàn..." đi vào thực chất, tạo đồng thuận xã hội.</li>
-                                    <li>Góp phần quan trọng vào công tác xây dựng, chỉnh đốn Đảng và bộ máy Nhà nước.</li>
-                                </ul>
-                            </div>
-
-                            <div className="hm-eval-card bad">
-                                <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display flex items-center">
-                                    <span className="bg-red-100 text-red-600 p-2 rounded-lg mr-3">!</span>
-                                    Hạn chế & Thách thức
-                                </h3>
-                                <ul className="space-y-3 text-gray-700 font-serif list-disc pl-5">
-                                    <li>Việc thực hiện dân chủ ở một số nơi còn mang tính hình thức.</li>
-                                    <li>Vai trò giám sát, phản biện của một bộ phận người dân chưa phát huy hết tiềm năng.</li>
-                                    <li>Tình trạng quan liêu, xa rời quần chúng của một bộ phận cán bộ vẫn còn tồn tại.</li>
-                                </ul>
-                            </div>
+                    <div className="grid lg:grid-cols-3 gap-8">
+                        <div className="hm-feat-card">
+                            <div className="hm-feat-number alt">01</div>
+                            <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Nguồn Gốc</h3>
+                            <p className="text-gray-700 leading-relaxed font-serif">
+                                Dân chủ cơ sở là hình thái dân chủ cổ xưa nhất của dân tộc Việt. Mọi gia đình là nơi đầu tiên hình thành nhận thức dân chủ trong mỗi cá nhân.
+                            </p>
                         </div>
-
-                        <div className="bg-[#1a0f0a] text-white p-8 rounded-3xl shadow-2xl relative overflow-hidden flex flex-col justify-center border border-[#d4af37]/20">
-                            <div className="absolute top-0 right-0 p-4">
-                                <div className="text-[10px] uppercase tracking-widest text-[#d4af37] font-bold">Live Assessment</div>
-                            </div>
-                            <h3 className="text-3xl font-display font-bold text-[#d4af37] mb-8">Đề xuất Giải pháp 2026</h3>
-
-                            <div className="grid grid-cols-1 gap-6">
-                                <div className="flex items-center p-4 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all cursor-pointer group">
-                                    <div className="mr-4 text-2xl group-hover:scale-110 transition-transform">📱</div>
-                                    <div>
-                                        <h4 className="font-bold text-[#d4af37]">Chuyển đổi số Dân chủ</h4>
-                                        <p className="text-sm text-gray-400">Ứng dụng App di động để dân bầu chọn và giám sát dự án địa phương 24/7.</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-center p-4 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all cursor-pointer group">
-                                    <div className="mr-4 text-2xl group-hover:scale-110 transition-transform">🏛️</div>
-                                    <div>
-                                        <h4 className="font-bold text-[#d4af37]">Nâng cao Trách nhiệm giải trình</h4>
-                                        <p className="text-sm text-gray-400">Thiết lập kênh đối thoại trực tiếp hàng tháng giữa lãnh đạo và người dân.</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-center p-4 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-all cursor-pointer group">
-                                    <div className="mr-4 text-2xl group-hover:scale-110 transition-transform">🎓</div>
-                                    <div>
-                                        <h4 className="font-bold text-[#d4af37]">Giáo dục Chính trị Phổ thông</h4>
-                                        <p className="text-sm text-gray-400">Đưa nội dung Dân chủ cơ sở vào chương trình đào tạo kỹ năng sống cho giới trẻ.</p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="hm-feat-card">
+                            <div className="hm-feat-number">02</div>
+                            <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Kết Nối</h3>
+                            <p className="text-gray-700 leading-relaxed font-serif">
+                                Kết nối lý thuyết với thực tiễn đóng góp của người dân tại địa phương, giúp sinh viên thấu đáo vai trò công dân trong cộng đồng.
+                            </p>
+                        </div>
+                        <div className="hm-feat-card">
+                            <div className="hm-feat-number alt">03</div>
+                            <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Hành Động</h3>
+                            <p className="text-gray-700 leading-relaxed font-serif">
+                                Khích thích thế hệ trẻ tham gia sự kiện cộng đồng, đóng góp ý kiến về chính sách nơi địa phương một cách tích cực và hiệu quả.
+                            </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Creative Dashboard Section */}
-            <section className="hm-section hm-dark-section relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#d4af37 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
-
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 text-center md:text-left">
-                        <div className="max-w-xl">
-                            <h2 className="text-4xl font-display font-bold text-[#d4af37] mb-4 uppercase leading-tight">Dữ liệu Thực tiễn 2026</h2>
-                            <p className="text-gray-400 font-serif italic text-lg">Mô phỏng mức độ lan tỏa của Dân chủ cơ sở tại các địa phương điểm.</p>
-                        </div>
-                        <div className="hm-stat-pills">
-                            <div className="hm-stat-item">
-                                <Globe className="w-6 h-6 text-[#d4af37] mx-auto mb-2" />
-                                <div className="text-2xl font-bold">63</div>
-                                <div className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Tỉnh Thành</div>
-                            </div>
-                            <div className="hm-stat-item">
-                                <Activity className="w-6 h-6 text-green-500 mx-auto mb-2" />
-                                <div className="text-2xl font-bold">89%</div>
-                                <div className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Hài lòng</div>
-                            </div>
-                        </div>
+            {/* Ho Chi Minh Quotes Section */}
+            <section className="hm-section hm-white-section">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="hm-section-title">Châm Ngôn Của Bác Hồ</h2>
+                        <p className="text-xl text-gray-600 font-serif italic text-center mt-4">
+                            Những lời dạy thõ của Bác Hồ Minh về dân chủ
+                        </p>
+                        <div className="hm-divider mt-6"></div>
                     </div>
 
-                    <div className="hm-grid-3">
-                        <div className="hm-dash-card">
-                            <MessageSquare className="w-10 h-10 text-[#d4af37] mb-6 hover:scale-110 transition-transform" />
-                            <h3 className="text-xl font-bold mb-4 font-display text-[#d4af37] uppercase tracking-wide">Ý kiến đóng góp</h3>
-                            <div className="h-2 w-full bg-white/5 rounded-full mb-4 overflow-hidden shadow-inner">
-                                <div className="h-full bg-gradient-to-r from-[#d4af37] to-amber-200 w-[92%]"></div>
-                            </div>
-                            <p className="text-sm text-gray-400 font-serif leading-relaxed">92% dự án hạ tầng được dân thảo luận và đóng góp ý kiến từ giai đoạn quy hoạch (thực tiễn xã điểm).</p>
+                    <div className="grid lg:grid-cols-2 gap-8">
+                        <div className="bg-gradient-to-r from-[#8b0000] to-[#a00000] p-8 rounded-2xl shadow-lg text-white border-l-4 border-[#d4af37]">
+                            <p className="text-2xl font-serif italic mb-4">
+                                "Dân là gốc rễ của nước"
+                            </p>
+                            <p className="text-sm text-gray-100 font-serif">
+                                Bác Hồ nhấn mạnh rằng nhân dân là nguồn độc lập và lực lượng chủ động của cả nước nhà.
+                            </p>
                         </div>
 
-                        <div className="hm-dash-card">
-                            <Globe className="w-10 h-10 text-[#d4af37] mb-6 hover:scale-110 transition-transform" />
-                            <h3 className="text-xl font-bold mb-4 font-display text-[#d4af37] uppercase tracking-wide">Công khai Ngân sách</h3>
-                            <div className="h-2 w-full bg-white/5 rounded-full mb-4 overflow-hidden shadow-inner">
-                                <div className="h-full bg-gradient-to-r from-[#d4af37] to-amber-200 w-[85%]"></div>
-                            </div>
-                            <p className="text-sm text-gray-400 font-serif leading-relaxed">85% phường, xã số hóa việc công khai thu chi ngân sách qua nền tảng Chính quyền điện tử (E-Gov).</p>
+                        <div className="bg-gradient-to-r from-[#8b0000] to-[#a00000] p-8 rounded-2xl shadow-lg text-white border-l-4 border-[#d4af37]">
+                            <p className="text-2xl font-serif italic mb-4">
+                                "Quản lý nước phải căn cứ vào ý kiến của nhân dân"
+                            </p>
+                            <p className="text-sm text-gray-100 font-serif">
+                                Đây là nguyên tắc sâu xa của dân chủ - mọi quyết định của chính quyền phải lắng nghe giọng nói dân.
+                            </p>
                         </div>
 
-                        <div className="hm-dash-card">
-                            <Activity className="w-10 h-10 text-[#d4af37] mb-6 hover:scale-110 transition-transform" />
-                            <h3 className="text-xl font-bold mb-4 font-display text-[#d4af37] uppercase tracking-wide">Giám sát Nhân dân</h3>
-                            <div className="h-2 w-full bg-white/5 rounded-full mb-4 overflow-hidden shadow-inner">
-                                <div className="h-full bg-gradient-to-r from-[#d4af37] to-amber-200 w-[78%]"></div>
-                            </div>
-                            <p className="text-sm text-gray-400 font-serif leading-relaxed">78% người dân thường xuyên sử dụng quyền giám sát thông qua Ban Thanh tra Nhân dân và Ban Giám sát đầu tư cộng đồng.</p>
+                        <div className="bg-gradient-to-r from-[#8b0000] to-[#a00000] p-8 rounded-2xl shadow-lg text-white border-l-4 border-[#d4af37]">
+                            <p className="text-2xl font-serif italic mb-4">
+                                "Trong dân chủ, nhân dân là chủ, cán bộ là tôi tửa"
+                            </p>
+                            <p className="text-sm text-gray-100 font-serif">
+                                Đặc tíinh này lỏm bỏ tài sản dân chủ của Vệt Nam số, cảnh báo cán bộ không bỏ quên vị ché cộng thởe.
+                            </p>
+                        </div>
+
+                        <div className="bg-gradient-to-r from-[#8b0000] to-[#a00000] p-8 rounded-2xl shadow-lg text-white border-l-4 border-[#d4af37]">
+                            <p className="text-2xl font-serif italic mb-4">
+                                "Phải lấy lợi ích của nhân dân làm mục tiêu cao nhất"
+                            </p>
+                            <p className="text-sm text-gray-100 font-serif">
+                                Mọi chính sách, mọi hoạt động của đại họm dân chủ đều phải xuất phát và hướng tới lợi ích tộng thể của nhân dân.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -230,8 +189,8 @@ export function Home() {
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <div className="flex items-center justify-center space-x-3 mb-6">
                         {/* Logo Footer */}
-                        <div className="bg-white p-1 rounded-lg overflow-hidden w-auto h-20 flex items-center justify-center border-2 border-[#d4af37]">
-                            <img src="/logo.png" alt="MLN131 Logo" className="h-full w-auto object-contain" />
+                        <div className="flex items-center justify-center flex-shrink-0" style={{ width: '80px', height: '80px', aspectRatio: '1' }}>
+                            <img src="/logo3.png" alt="MLN131 Logo" className="max-w-full max-h-full object-contain" />
                         </div>
                         <span className="font-display font-bold text-3xl tracking-wide">MLN131</span>
                     </div>

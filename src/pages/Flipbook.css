@@ -101,9 +101,10 @@
   color: var(--fb-text-dark);
   line-height: 1.6;
   text-align: justify;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   overflow-y: auto;
   /* Allow scroll if content too long */
+  padding-right: 0.5rem;
 }
 
 .fb-page-number {

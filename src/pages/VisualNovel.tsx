@@ -481,7 +481,7 @@ function EndingScreen({ gameState, onRestart }: EndingScreenProps) {
               style={{width: '64px', height: '64px', margin: '0 auto'}}
             ></div>
           </motion.div>
-          <h2 className="vn-ending-title">{endingData.title.replace(/[🏆⚠️💥☠️]/g, '').trim()}</h2>
+          <h2 className="vn-ending-title">{endingData.title.replace(/🏆|⚠️|💥|☠️/gu, '').trim()}</h2>
         </div>
 
         <div className="vn-ending-body">
