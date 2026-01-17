@@ -137,9 +137,9 @@ export function Home() {
             <section className="hm-section hm-white-section">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="hm-section-title">Châm Ngôn Của Bác Hồ</h2>
+                        <h2 className="hm-section-title">DANH NGÔN HỒ CHÍ MINH</h2>
                         <p className="text-xl text-gray-600 font-serif italic text-center mt-4">
-                            Những lời dạy thõ của Bác Hồ Minh về dân chủ
+                            Dân chủ là của dân, do dân, vì dân
                         </p>
                         <div className="hm-divider mt-6"></div>
                     </div>
@@ -147,37 +147,37 @@ export function Home() {
                     <div className="grid lg:grid-cols-2 gap-8">
                         <div className="bg-gradient-to-r from-[#8b0000] to-[#a00000] p-8 rounded-2xl shadow-lg text-white border-l-4 border-[#d4af37]">
                             <p className="text-2xl font-serif italic mb-4">
-                                "Dân là gốc rễ của nước"
+                                "Nước lấy dân làm gốc"
                             </p>
                             <p className="text-sm text-gray-100 font-serif">
-                                Bác Hồ nhấn mạnh rằng nhân dân là nguồn độc lập và lực lượng chủ động của cả nước nhà.
+                                Bác Hồ khẳng định nhân dân là nguồn sức mạnh vô địch, là chủ thể quyết định vận mệnh của đất nước.
                             </p>
                         </div>
 
                         <div className="bg-gradient-to-r from-[#8b0000] to-[#a00000] p-8 rounded-2xl shadow-lg text-white border-l-4 border-[#d4af37]">
                             <p className="text-2xl font-serif italic mb-4">
-                                "Quản lý nước phải căn cứ vào ý kiến của nhân dân"
+                                "Dân biết, dân bàn, dân làm, dân kiểm tra"
                             </p>
                             <p className="text-sm text-gray-100 font-serif">
-                                Đây là nguyên tắc sâu xa của dân chủ - mọi quyết định của chính quyền phải lắng nghe giọng nói dân.
+                                Đây là nguyên tắc cốt lõi của dân chủ cơ sở - mọi quyết định quản lý đều phải dựa trên nền tảng lắng nghe và tôn trọng ý nguyện của nhân dân.
                             </p>
                         </div>
 
                         <div className="bg-gradient-to-r from-[#8b0000] to-[#a00000] p-8 rounded-2xl shadow-lg text-white border-l-4 border-[#d4af37]">
                             <p className="text-2xl font-serif italic mb-4">
-                                "Trong dân chủ, nhân dân là chủ, cán bộ là tôi tửa"
+                                "Cán bộ là người đầy tớ thật trung thành của nhân dân"
                             </p>
                             <p className="text-sm text-gray-100 font-serif">
-                                Đặc tíinh này lỏm bỏ tài sản dân chủ của Vệt Nam số, cảnh báo cán bộ không bỏ quên vị ché cộng thởe.
+                                Tư tưởng này làm rõ bản chất của Nhà nước ta, nhắc nhở mỗi cán bộ phải luôn ghi nhớ trách nhiệm phụng sự Tổ quốc, phục vụ đồng bào.
                             </p>
                         </div>
 
                         <div className="bg-gradient-to-r from-[#8b0000] to-[#a00000] p-8 rounded-2xl shadow-lg text-white border-l-4 border-[#d4af37]">
                             <p className="text-2xl font-serif italic mb-4">
-                                "Phải lấy lợi ích của nhân dân làm mục tiêu cao nhất"
+                                "Việc gì có lợi cho dân, ta phải hết sức làm"
                             </p>
                             <p className="text-sm text-gray-100 font-serif">
-                                Mọi chính sách, mọi hoạt động của đại họm dân chủ đều phải xuất phát và hướng tới lợi ích tộng thể của nhân dân.
+                                Mọi chính sách và hoạt động của bộ máy chính quyền đều phải lấy lợi ích và hạnh phúc của nhân dân làm mục tiêu tối thượng.
                             </p>
                         </div>
                     </div>
