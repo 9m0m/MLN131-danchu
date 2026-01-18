@@ -50,7 +50,7 @@ export function AIUsage() {
                         </div>
                         <h3 className="text-2xl font-bold text-white mb-4">GitHub Copilot</h3>
                         <p className="text-gray-300 leading-relaxed">
-                            Trợ lý lập trình thông minh giúp xây dựng cấu trúc website, tối ưu hóa mã nguồn và đảm bảo hiệu năng vận hành mượt mà trên mọi thiết bị.
+                            Trợ lý lập trình thông minh giúp xây dựng cấu trúc website, tối ưu hóa mã nguồn và đảm bảo hiệu năng vận hành mượt mà.
                         </p>
                     </motion.div>
 

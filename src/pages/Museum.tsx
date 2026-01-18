@@ -18,8 +18,10 @@ const detailedEvents = [
         figures: ['Plato', 'Aristoteles', 'Perikles'],
         significance: 'Đánh dấu sự ra đời chính thức của khái niệm dân chủ trong lịch sử nhân loại',
         image: {
+            url: '/ra_doi_thuat_ngu_dan_chu.png',
             alt: 'Nền dân chủ Hy Lạp cổ đại',
-            sourceLabel: 'Tài liệu lịch sử: Wikipedia Ancient Greece'
+            sourceLabel: 'Everest - Lịch sử các nền dân chủ',
+            sourceUrl: 'https://everest.org.vn/lich-su-cac-nen-dan-chu/'
         }
     },
     {
@@ -37,8 +39,10 @@ const detailedEvents = [
         figures: ['Charlemagne', 'Louis XIV'],
         significance: 'Giai đoạn lùi xa nhất của dân chủ trong lịch sử',
         image: {
+            url: '/thoi_ki_den_toi.jpg',
             alt: 'Thời kỳ Trung cổ phong kiến',
-            sourceLabel: 'Tài liệu lịch sử: Encyclopédie Britannica'
+            sourceLabel: 'Wikipedia - Trung kỳ Trung Châu Âu',
+            sourceUrl: 'https://vi.wikipedia.org/wiki/Trung_k%E1%BB%B3_Trung_C%E1%BB%95'
         }
     },
     {
@@ -56,8 +60,10 @@ const detailedEvents = [
         figures: ['John Locke', 'Montesquieu', 'Jean-Jacques Rousseau'],
         significance: 'Bước ngoặt lớn: từ phong kiến sang tư sản - sự quan tâm tới quyền con người',
         image: {
+            url: '/su_xuat_hien_cua_tu_san.jpg',
             alt: 'Thời kỳ Phục hưng và Khai sáng',
-            sourceLabel: 'Tài liệu lịch sử: Museum of Art'
+            sourceLabel: 'Wikipedia - Thời kỳ Khai Sáng',
+            sourceUrl: 'https://vi.wikipedia.org/wiki/Th%E1%BB%9Di_k%E1%BB%B3_Khai_S%C3%A1ng'
         }
     },
     {
@@ -75,8 +81,10 @@ const detailedEvents = [
         figures: ['Karl Marx', 'Friedrich Engels'],
         significance: 'Khởi đầu của dân chủ xã hội chủ nghĩa dưới hình thức thực tiễn',
         image: {
+            url: '/cong_xa_paris.jpg',
             alt: 'Công xã Paris 1871',
-            sourceLabel: 'Tài liệu lịch sử: Archives de Paris'
+            sourceLabel: 'Tư liệu văn kiến - Công xã Pari 1870',
+            sourceUrl: 'https://tulieuvankien.dangcongsan.vn/ho-so-su-kien-nhan-chung/su-kien-va-nhan-chung/cong-xa-pari-1870-3313'
         }
     },
     {
@@ -94,8 +102,10 @@ const detailedEvents = [
         figures: ['Lenin', 'Stalin'],
         significance: 'Bước ngoặt lịch sử: dân chủ xã hội chủ nghĩa từ lý thuyết trở thành thực tiễn',
         image: {
+            url: '/cach_mang_thang_10.jpg',
             alt: 'Cách mạng Tháng Mười Nga',
-            sourceLabel: 'Tài liệu lịch sử: Russian State Library'
+            sourceLabel: 'QDND - Cách mạng Tháng Mười Nga',
+            sourceUrl: 'https://www.qdnd.vn/quoc-te/doi-song/cach-mang-thang-muoi-nga-khai-mo-mot-thoi-dai-moi-750340'
         }
     },
     {
@@ -113,8 +123,10 @@ const detailedEvents = [
         figures: ['Hồ Chí Minh', 'Võ Nguyên Giáp'],
         significance: 'Khoảnh khắc lịch sử: người Việt trở thành chủ nhân đất nước của mình',
         image: {
+            url: '/cach_mang_thang_8.jpg',
             alt: 'Cách mạng Tháng Tám 1945 Việt Nam',
-            sourceLabel: 'Tài liệu lịch sử: Bảo tàng Quốc gia Việt Nam'
+            sourceLabel: 'QDND - Ngày 19/8/1945 Cách mạng Tháng Tám',
+            sourceUrl: 'https://www.qdnd.vn/tu-lieu-ho-so/ngay-nay-nam-xua/ngay-19-8-1945-cach-mang-thang-tam-thanh-cong-700812'
         }
     },
     {
@@ -132,8 +144,10 @@ const detailedEvents = [
         figures: ['Hồ Chí Minh'],
         significance: 'Khẳng định quyền bầu cử của nhân dân - nền tảng của dân chủ',
         image: {
+            url: '/tong_tuyen_cu_dau_tien.jpg',
             alt: 'Tổng tuyển cử 1946 Việt Nam',
-            sourceLabel: 'Tài liệu lịch sử: Bảo tàng Quốc gia Việt Nam'
+            sourceLabel: 'QDND - Ngày 6/1/1946 Tổng tuyển cử đầu tiên',
+            sourceUrl: 'https://www.qdnd.vn/tu-lieu-ho-so/ngay-nay-nam-xua/ngay-6-1-1946-ngay-dien-ra-cuoc-tong-tuyen-cu-dau-tien-682156'
         }
     },
     {
@@ -151,8 +165,10 @@ const detailedEvents = [
         figures: ['Nguyễn Văn Linh', 'Trần Phú'],
         significance: 'Bước ngoặt: từ quản lý hành chính sang dân chủ tham gia',
         image: {
+            url: '/dai_hoi_VI.jpg',
             alt: 'Đại hội VI - Đổi mới 1986',
-            sourceLabel: 'Tài liệu lịch sử: Bảo tàng Cách mạng Việt Nam'
+            sourceLabel: 'QDND - Đại hội VI - Đổi mới 1986',
+            sourceUrl: 'https://www.qdnd.vn/chinh-tri/tin-tuc/cac-ky-dai-hoi-cua-dang-va-nhung-dau-an-lich-su-dai-hoi-lan-thu-vi-khoi-xuong-va-lanh-dao-su-nghiep-doi-moi-dat-nuoc-813798'
         }
     },
     {
@@ -170,8 +186,10 @@ const detailedEvents = [
         figures: ['Nguyễn Phú Trọng'],
         significance: 'Cơ sở pháp lý cho dân chủ xã hội chủ nghĩa tại Việt Nam',
         image: {
+            url: '/hien_phap_2013.jpg',
             alt: 'Hiến pháp 2013 Việt Nam',
-            sourceLabel: 'Tài liệu: Trung tâm Thông tin & Chỉ đạo'
+            sourceLabel: 'Luật Việt Nam - Hiến pháp 2013',
+            sourceUrl: 'https://luatvietnam.vn/linh-vuc-khac/nhung-noi-dung-trong-hien-phap-2013-duoc-sua-doi-883-102009-article.html'
         }
     },
     {
@@ -189,8 +207,10 @@ const detailedEvents = [
         figures: ['Quốc hội Việt Nam'],
         significance: 'Hoàn thiện hành lang pháp lý cho dân chủ Việt Nam hiện đại',
         image: {
+            url: '/luat_thuc_hien_dan_chu_co_so.jpeg',
             alt: 'Luật Thực hiện dân chủ cơ sở 2022',
-            sourceLabel: 'Tài liệu: Quốc hội Việt Nam'
+            sourceLabel: 'Thư viện pháp luật - Luật Thực hiện dân chủ cơ sở 2022',
+            sourceUrl: 'https://thuvienphapluat.vn/phap-luat/ho-tro-phap-luat/luat-thuc-hien-dan-chu-o-co-so-2022-vua-duoc-ban-hanh-co-hieu-luc-khi-nao-pham-vi-thuc-hien-dan-chu-57746.html'
         }
     }
 ];
@@ -289,13 +309,25 @@ export function Museum() {
 
                             <div className="ms-modal-media">
                                 <div className="ms-modal-image">
-                                    <Image className="ms-modal-image-icon" />
-                                    <span>Hình ảnh lịch sử</span>
+                                    {activeEvent.image.url ? (
+                                        <img src={activeEvent.image.url} alt={activeEvent.image.alt} />
+                                    ) : (
+                                        <>
+                                            <Image className="ms-modal-image-icon" />
+                                            <span>Hình ảnh lịch sử</span>
+                                        </>
+                                    )}
                                     <p>{activeEvent.image.alt}</p>
                                 </div>
                                 <div className="ms-modal-source">
                                     <span>Nguồn ảnh</span>
-                                    <p>{activeEvent.image.sourceLabel}</p>
+                                    {activeEvent.image.sourceUrl ? (
+                                        <a href={activeEvent.image.sourceUrl} target="_blank" rel="noopener noreferrer" className="ms-source-link">
+                                            {activeEvent.image.sourceLabel}
+                                        </a>
+                                    ) : (
+                                        <p>{activeEvent.image.sourceLabel}</p>
+                                    )}
                                 </div>
                             </div>
                         </div>

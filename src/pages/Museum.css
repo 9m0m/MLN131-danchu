@@ -347,6 +347,30 @@
   margin: 0;
 }
 
+.ms-source-link {
+  color: #d4af37;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  border-bottom: 1px dotted rgba(212, 175, 55, 0.5);
+  display: inline-block;
+  margin: 0;
+}
+
+.ms-source-link:hover {
+  color: #f8e6b6;
+  border-bottom-color: rgba(248, 230, 182, 0.8);
+}
+
+.ms-modal-image img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  display: block;
+}
+
 @media (max-width: 768px) {
   .ms-timeline {
     padding-left: 1.5rem;
