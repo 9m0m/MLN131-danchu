@@ -133,51 +133,69 @@ export function Home() {
                 </div>
             </section>
 
-            {/* Ho Chi Minh Quotes Section */}
+            {/* Democracy Principles Section */}
             <section className="hm-section hm-white-section">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="hm-section-title">DANH NGÔN HỒ CHÍ MINH</h2>
+                        <h2 className="hm-section-title">Phương châm thực hiện dân chủ ở cơ sở</h2>
                         <p className="text-xl text-gray-600 font-serif italic text-center mt-4">
                             Dân chủ là của dân, do dân, vì dân
                         </p>
                         <div className="hm-divider mt-6"></div>
                     </div>
 
-                    <div className="grid lg:grid-cols-2 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <div className="bg-gradient-to-r from-[#8b0000] to-[#a00000] p-8 rounded-2xl shadow-lg text-white border-l-4 border-[#d4af37]">
-                            <p className="text-2xl font-serif italic mb-4">
-                                "Nước lấy dân làm gốc"
+                            <p className="text-2xl font-serif font-bold mb-4">
+                                Dân biết
                             </p>
                             <p className="text-sm text-gray-100 font-serif">
-                                Bác Hồ khẳng định nhân dân là nguồn sức mạnh vô địch, là chủ thể quyết định vận mệnh của đất nước.
+                                Nhà nước công khai, minh bạch thông tin về các vấn đề liên quan đến lợi ích và quyết định của nhân dân.
                             </p>
                         </div>
 
                         <div className="bg-gradient-to-r from-[#8b0000] to-[#a00000] p-8 rounded-2xl shadow-lg text-white border-l-4 border-[#d4af37]">
-                            <p className="text-2xl font-serif italic mb-4">
-                                "Dân biết, dân bàn, dân làm, dân kiểm tra"
+                            <p className="text-2xl font-serif font-bold mb-4">
+                                Dân bàn
                             </p>
                             <p className="text-sm text-gray-100 font-serif">
-                                Đây là nguyên tắc cốt lõi của dân chủ cơ sở - mọi quyết định quản lý đều phải dựa trên nền tảng lắng nghe và tôn trọng ý nguyện của nhân dân.
+                                Người dân được tham gia thảo luận, đóng góp ý kiến, trí tuệ để xây dựng các chủ trương, chính sách.
                             </p>
                         </div>
 
                         <div className="bg-gradient-to-r from-[#8b0000] to-[#a00000] p-8 rounded-2xl shadow-lg text-white border-l-4 border-[#d4af37]">
-                            <p className="text-2xl font-serif italic mb-4">
-                                "Cán bộ là người đầy tớ thật trung thành của nhân dân"
+                            <p className="text-2xl font-serif font-bold mb-4">
+                                Dân làm
                             </p>
                             <p className="text-sm text-gray-100 font-serif">
-                                Tư tưởng này làm rõ bản chất của Nhà nước ta, nhắc nhở mỗi cán bộ phải luôn ghi nhớ trách nhiệm phụng sự Tổ quốc, phục vụ đồng bào.
+                                Nhân dân trực tiếp tham gia thực hiện các công việc, dự án tại địa phương.
                             </p>
                         </div>
 
                         <div className="bg-gradient-to-r from-[#8b0000] to-[#a00000] p-8 rounded-2xl shadow-lg text-white border-l-4 border-[#d4af37]">
-                            <p className="text-2xl font-serif italic mb-4">
-                                "Việc gì có lợi cho dân, ta phải hết sức làm"
+                            <p className="text-2xl font-serif font-bold mb-4">
+                                Dân kiểm tra
                             </p>
                             <p className="text-sm text-gray-100 font-serif">
-                                Mọi chính sách và hoạt động của bộ máy chính quyền đều phải lấy lợi ích và hạnh phúc của nhân dân làm mục tiêu tối thượng.
+                                Người dân có quyền giám sát, đánh giá quá trình thực hiện và kết quả của các công việc.
+                            </p>
+                        </div>
+
+                        <div className="bg-gradient-to-r from-[#8b0000] to-[#a00000] p-8 rounded-2xl shadow-lg text-white border-l-4 border-[#d4af37]">
+                            <p className="text-2xl font-serif font-bold mb-4">
+                                Dân giám sát
+                            </p>
+                            <p className="text-sm text-gray-100 font-serif">
+                                Nhân dân tham gia giám sát hoạt động của bộ máy nhà nước, cán bộ, công chức.
+                            </p>
+                        </div>
+
+                        <div className="bg-gradient-to-r from-[#8b0000] to-[#a00000] p-8 rounded-2xl shadow-lg text-white border-l-4 border-[#d4af37]">
+                            <p className="text-2xl font-serif font-bold mb-4">
+                                Dân thụ hưởng
+                            </p>
+                            <p className="text-sm text-gray-100 font-serif">
+                                Nhân dân trực tiếp được hưởng thụ thành quả từ các hoạt động phát triển kinh tế - xã hội.
                             </p>
                         </div>
                     </div>
