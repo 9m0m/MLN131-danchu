@@ -81,7 +81,7 @@ export function AIUsage() {
                     <div className="absolute top-0 left-0 w-2 h-full bg-[#d4af37]"></div>
                     <h3 className="text-[#d4af37] font-display font-bold text-xl mb-3">CAM KẾT CHẤT LƯỢNG NỘI DUNG</h3>
                     <p className="text-white/90 font-serif italic text-lg md:text-xl">
-                        "Toàn bộ nội dung Quiz và kiến thức chuyên môn được trích xuất nguyên bản từ GIAO TRINH CNXHKH_2021 giáo trình chủ nghĩa xã hội khoa học."
+                        "Toàn bộ nội dung Quiz và kiến thức chuyên môn được trích xuất nguyên bản từ GIÁO TRÌNH CNXHKH_2021 giáo trình chủ nghĩa xã hội khoa học."
                     </p>
                     <p className="text-white/70 text-sm md:text-base mt-4">
                         Cam kết bổ sung: không phát sinh nội dung mới ngoài chương trình, minh bạch nguồn tài liệu và ưu tiên tính chính xác hơn tốc độ.

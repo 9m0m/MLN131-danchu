@@ -126,7 +126,7 @@ export function Home() {
                             <div className="hm-feat-number alt">03</div>
                             <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">Hành Động</h3>
                             <p className="text-gray-700 leading-relaxed font-serif">
-                                Khích thích thế hệ trẻ tham gia sự kiện cộng đồng, đóng góp ý kiến về chính sách nơi địa phương một cách tích cực và hiệu quả.
+                                Kích thích thế hệ trẻ tham gia sự kiện cộng đồng, đóng góp ý kiến về chính sách nơi địa phương một cách tích cực và hiệu quả.
                             </p>
                         </div>
                     </div>

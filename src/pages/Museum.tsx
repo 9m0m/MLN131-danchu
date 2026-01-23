@@ -41,7 +41,7 @@ const detailedEvents = [
         image: {
             url: '/thoi_ki_den_toi.jpg',
             alt: 'Thời kỳ Trung cổ phong kiến',
-            sourceLabel: 'Wikipedia - Trung kỳ Trung Châu Âu',
+            sourceLabel: 'Wikipedia - Trung kỳ Trung Cổ châu Âu',
             sourceUrl: 'https://vi.wikipedia.org/wiki/Trung_k%E1%BB%B3_Trung_C%E1%BB%95'
         }
     },
@@ -83,7 +83,7 @@ const detailedEvents = [
         image: {
             url: '/cong_xa_paris.jpg',
             alt: 'Công xã Paris 1871',
-            sourceLabel: 'Tư liệu văn kiến - Công xã Pari 1870',
+            sourceLabel: 'Tư liệu văn kiện - Công xã Pari 1870',
             sourceUrl: 'https://tulieuvankien.dangcongsan.vn/ho-so-su-kien-nhan-chung/su-kien-va-nhan-chung/cong-xa-pari-1870-3313'
         }
     },
