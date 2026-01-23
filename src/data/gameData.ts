@@ -268,173 +268,111 @@ export const endings: Record<EndingType, Ending> = {
     title: "🏆 VƯƠNG QUỐC DÂN CHỦ THỰC THỤ",
     emoji: "🏆",
     color: "#ffd700",
-    content: [`Sau 15 năm, Lãnh địa của bạn trở thành HÌNH MẪU về dân chủ cơ sở trong toàn Vương quốc Aurelia!
+    content: [`Sau 15 năm, Lãnh địa của bạn trở thành hình mẫu về **dân chủ cơ sở** trong toàn Vương quốc Aurelia.
 
-**THÀNH TỰU VĨ ĐẠI:**
+### 1) Thành tựu thể chế
+- **Dân làm chủ thực chất:** Lãnh dân không chỉ được tham vấn, mà có **quyền quyết định** các chính sách trọng yếu.
+- **Lãnh đạo đúng vai:** Hội Kỵ sĩ thực hiện **vai trò định hướng**, không áp đặt mệnh lệnh tùy tiện.
+- **Minh bạch & trách nhiệm giải trình:** Ngân sách, chính sách được công bố rõ ràng, có cơ chế giải thích và phản hồi.
+- **Giám sát quyền lực hiệu quả:** Ban Giám sát nhân dân hoạt động độc lập, ngăn ngừa tham nhũng.
 
-🏛️ **Hệ thống Dân chủ hoàn hảo:**
-- Lãnh dân THỰC SỰ làm chủ: Không chỉ được hỏi ý kiến, mà có quyền QUYẾT ĐỊNH các chính sách quan trọng
-- Hội Kỵ sĩ lãnh đạo ĐÚNG CÁCH: Chỉ đạo đường lối đúng đắn vì lợi ích nhân dân, không áp đặt
-- Thông tin MINH BẠCH: Mọi chính sách, ngân sách đều được công khai, giải thích đầy đủ
-- Quyền lực được GIÁM SÁT: Ban Giám sát nhân dân hoạt động hiệu quả, ngăn chặn tham nhũng
+### 2) Phát triển kinh tế – xã hội
+- Tăng trưởng **ổn định** và bền vững, tránh các cú sốc lớn.
+- Thu nhập bình quân tăng **150%** trong 15 năm.
+- Chênh lệch giàu nghèo giảm **60%**, nâng cao công bằng xã hội.
 
-💰 **Kinh tế phát triển bền vững:**
-- Mặc dù không nhanh như các Lãnh địa độc tài, nhưng phát triển ỔN ĐỊNH, KHÔNG có khủng hoảng lớn
-- Thu nhập bình quân tăng 150% trong 15 năm
-- Chênh lệch giàu nghèo giảm 60% - Xã hội công bằng hơn
+### 3) Đồng thuận xã hội
+- **92%** lãnh dân hài lòng với chất lượng sống.
+- Tỷ lệ tham gia bỏ phiếu **85%**, thể hiện tính chính danh cao.
+- Không xuất hiện bạo loạn trong suốt 15 năm.
 
-😊 **Lãnh dân hạnh phúc và tự hào:**
-- 92% lãnh dân hài lòng với cuộc sống (cao nhất trong Vương quốc)
-- Tỷ lệ tham gia bỏ phiếu: 85% - Lãnh dân tin tưởng vào hệ thống
-- KHÔNG có cuộc nổi loạn, biểu tình bạo lực nào trong 15 năm
+### 4) Ghi nhận từ Hoàng gia
+- Phong tặng **“Huy hiệu Dân chủ Vàng”** – danh hiệu cao quý nhất.
+- 50 Lãnh địa khác đến học tập mô hình quản trị.
+- Tên bạn được ghi vào **“Thiên danh sử Vương quốc”**.
 
-🎖️ **Được Hoàng gia vinh danh:**
-- Hoàng gia phong tặng "HUY HIỆU DÂN CHỦ VÀNG" - Danh hiệu cao quý nhất
-- 50 Lãnh địa khác đến học tập kinh nghiệm
-- Bạn được ghi vào "THIÊN DANH SỬ VƯƠNG QUỐC" - Sách ghi những nhà lãnh đạo vĩ đại nhất
-
-📜 **DI SẢN LỊCH SỬ:**
-100 năm sau, các học giả viết:
-
-"Lãnh địa Tân Phú đời Minh Vương là bằng chứng sống cho học thuyết của Hiền triết Magnus: 'Quyền lực thuộc về nhân dân'. 
-
-Không phải vì Lãnh chủ giỏi, không phải vì có Pháp sư mạnh, mà chỉ đơn giản vì họ TÔN TRỌNG tiếng nói của dân.
-
-Đó là nền tảng của mọi xã hội thịnh vượng và công bằng."
+### 5) Di sản học thuật
+> “Quyền lực thuộc về nhân dân; người lãnh đạo chỉ là người **thi hành** ý chí chung.”
 
 ---
 
-**Bài học lớn nhất:** Dân chủ không phải là QUÀ TẶNG từ người cầm quyền, mà là QUYỀN TỰ NHIÊN của con người. Nhiệm vụ của nhà lãnh đạo là ĐẢM BẢO quyền đó được thực thi, không phải "ban phát" nó.`,
-    `⭐ Điều kiện: Cả 3 chỉ số ≥ 25. Đây là ending CỰC KHÓ - chỉ đạt được nếu bạn chọn đúng hầu hết các quyết định thể hiện dân chủ THỰC CHẤT, không phải hình thức.`]
+**Bài học cốt lõi:** Dân chủ không phải là **đặc ân** từ người cầm quyền, mà là **quyền tự nhiên** của con người.`,
+    `⭐ **Điều kiện:** Cả 3 chỉ số ≥ 25. Đây là ending **cực khó**, chỉ đạt được khi bạn kiên định với dân chủ **thực chất**.`]
   },
   bad1: {
     type: 'bad1',
     title: "⚠️ THẤT BẠI: Mất 1 trụ cột",
     emoji: "⚠️",
     color: "#fbbf24",
-    content: [`Sau 15 năm, Lãnh địa của bạn gặp KHỦNG HOẢNG NGHIÊM TRỌNG vì thiếu một yếu tố quan trọng:
+    content: [`Sau 15 năm, Lãnh địa rơi vào khủng hoảng vì **thiếu một trụ cột** then chốt.
 
-**Nếu Kinh tế < 25:** 💸
-- Lãnh địa nghèo nàn, thiếu hụt ngân sách trầm trọng
-- Không đủ tiền xây dựng cơ sở hạ tầng, y tế, giáo dục
-- Nhiều gia đình di cư sang Lãnh địa khác
-- Dù có dân chủ, nhưng "dân chủ đói khát" không bền vững
-
-**Nếu Hạnh phúc < 25:** 😢
-- Lãnh dân bất mãn, hay xảy ra biểu tình, đình công
-- Mặc dù có kinh tế và niềm tin, nhưng cuộc sống khổ cực
-- Nhiều chính sách tốt nhưng không được ủng hộ vì dân không hài lòng
-- Lãnh địa bất ổn, khó phát triển lâu dài
-
-**Nếu Niềm tin < 25:** 💔
-- Lãnh dân không tin vào Hội đồng, quan lại, hệ thống pháp luật
-- Tham nhũng tràn lan, không ai hợp tác với chính quyền
-- Mặc dù có tiền, nhưng không thể thực thi chính sách vì dân không tuân theo
-- Xã hội tan rã, mỗi người lo cho mình
+### Diễn giải theo chỉ số thấp
+- **Kinh tế < 25:** ngân sách suy kiệt, năng lực đầu tư hạ tầng suy giảm; “dân chủ đói khát” khó bền vững.
+- **Hạnh phúc < 25:** chất lượng sống thấp, biểu tình gia tăng; chính sách đúng nhưng thiếu đồng thuận xã hội.
+- **Niềm tin < 25:** tính chính danh suy giảm, tham nhũng lan rộng; chính sách không được thực thi hiệu quả.
 
 ---
 
-**Bài học:** Ba yếu tố KINH TẾ - HẠNH PHÚC - NIỀM TIN phải CÂN BẰNG. Thiếu một yếu tố, hệ thống sẽ không bền vững.
-
-Dân chủ cơ sở không chỉ là cho dân quyền nói, mà còn phải ĐẢM BẢO cuộc sống của họ, TĂNG CỰ niềm tin, và MANG LẠI hạnh phúc.`,
-    `⭐ Điều kiện: 1 trong 3 chỉ số < 25`]
+**Bài học:** Ba yếu tố **Kinh tế – Hạnh phúc – Niềm tin** phải **cân bằng**. Dân chủ cơ sở chỉ bền vững khi vừa bảo đảm **an sinh**, vừa củng cố **niềm tin**, và duy trì **đồng thuận xã hội**.`,
+    `⭐ **Điều kiện:** 1 trong 3 chỉ số < 25.`]
   },
   bad2: {
     type: 'bad2',
     title: "💥 THẢM HOẠ: Sụp đổ hệ thống",
     emoji: "💥",
     color: "#f87171",
-    content: [`Sau 15 năm, Lãnh địa của bạn rơi vào KHỦNG HOẢNG TỒI TỆ:
+    content: [`Sau 15 năm, Lãnh địa rơi vào **khủng hoảng toàn diện**.
 
-❌ **Kinh tế đổ vỡ:** Ngân sách âm, nợ nần chồng chất
-❌ **Lãnh dân bất mãn:** Biểu tình, bạo loạn xảy ra thường xuyên
-❌ **Niềm tin tan vỡ:** Không ai tin vào bất kỳ tổ chức nào
+### Chỉ báo hệ thống
+- **Kinh tế suy sụp:** nợ công tăng, ngân sách âm.
+- **Bất ổn xã hội:** biểu tình, bạo loạn tái diễn.
+- **Niềm tin đứt gãy:** người dân không còn tin vào bất kỳ thiết chế nào.
 
-**HẬU QUẢ NGHIÊM TRỌNG:**
-
-⚔️ Năm 17: Nổ ra Nổi loạn Nông dân quy mô lớn. 1000 người tấn công Đại sảnh Lãnh địa.
-
-🔥 Năm 18: Lãnh địa bị Hoàng gia can thiệp, giải tán Hội đồng, cách chức Bá tước.
-
-📉 Năm 20: Lãnh địa bị sáp nhập vào Lãnh địa khác, mất quyền tự trị.
+### Hậu quả
+- Năm 17: bùng nổ **Nổi loạn Nông dân** quy mô lớn.
+- Năm 18: Hoàng gia can thiệp, **giải tán** Hội đồng.
+- Năm 20: Lãnh địa bị sáp nhập, **mất quyền tự trị**.
 
 ---
 
-**Nguyên nhân thất bại:**
+**Nguyên nhân cốt lõi:** Vi phạm hàng loạt nguyên tắc dân chủ cơ sở:
+- Bỏ qua **tham vấn** và **lắng nghe**,
+- Biến dân chủ thành **hình thức**,
+- Áp đặt ý chí cá nhân lên ý chí tập thể,
+- Buông lỏng **giám sát quyền lực**,
+- Ưu tiên lợi ích nhóm thay vì lợi ích công.
 
-Bạn đã vi phạm NHIỀU NGUYÊN TẮC của Dân chủ cơ sở:
-- KHÔNG lắng nghe tiếng nói của nhân dân
-- CHỈ làm dân chủ HÌNH THỨC, không thực chất
-- ÁP ĐẶT ý chí cá nhân lên ý chí tập thể
-- BỎ QUA việc giám sát quyền lực, để tham nhũng tràn lan
-- ƯU TIÊN lợi ích quý tộc, bỏ rơi lợi ích nhân dân
+> “Một chế độ thiếu sự đồng ý của nhân dân chỉ là lâu đài cát.”
 
-**Bài học đắng cay:**
-
-Hiền triết Magnus đã cảnh báo: "Một chế độ không dựa trên sự đồng ý của nhân dân là một lâu đài cát. Sóng đầu tiên sẽ cuốn trôi nó."
-
-Lịch sử đã chứng minh ông đúng. Lãnh địa của bạn là một trong 3 Lãnh địa sụp đổ thảm hại nhất trong thế kỷ 13.`,
-    `⭐ Điều kiện: 2 trong 3 chỉ số < 25`]
+Lịch sử đã xác nhận điều đó.`,
+    `⭐ **Điều kiện:** 2 trong 3 chỉ số < 25.`]
   },
   hidden: {
     type: 'hidden',
     title: "☠️ KẾT THÚC ẨN: Chế độ Bạo ngược",
     emoji: "☠️",
     color: "#991b1b",
-    content: [`Sau 15 năm, Lãnh địa của bạn trở thành CHẾ ĐỘ ĐỘC TÀI TỐI TĂM NHẤT trong lịch sử Vương quốc Aurelia.
+    content: [`Sau 15 năm, Lãnh địa trở thành **chế độ bạo ngược** đen tối nhất trong lịch sử Aurelia.
 
-**NHỮNG TỘI ÁC:**
+### Tính chất chế độ
+- **Vi phạm dân chủ:** bịt miệng phản biện, quyết định áp đặt.
+- **Đàn áp quyền người:** giam giữ, cưỡng bức, kiểm duyệt.
+- **Tham nhũng hệ thống:** đặc quyền cho quý tộc, bóc lột dân chúng.
 
-🔴 **Vi phạm Dân chủ trắng trợn:**
-- Áp đặt mọi quyết định lên lãnh dân
-- Bịt miệng tiếng nói phản đối
-- Xử kín các vụ tham nhũng, bao che tội phạm
-- Biến Hội đồng Lãnh dân thành CON RỐI không có quyền lực thực sự
+### Hậu quả lịch sử
+- Năm 16: bùng nổ **Khởi nghĩa Lãnh dân** lớn nhất lịch sử.
+- Năm 17: Hoàng gia trấn áp, nhiều thương vong.
+- Năm 18: Toà án Tối cao xét xử công khai, truất phế và lưu đày.
 
-💀 **Đàn áp dã man:**
-- Giam giữ, tra tấn những người dám phản đối
-- Sử dụng bạo lực để dẹp yên biểu tình
-- Bịt mắt dư luận, kiểm duyệt thông tin
+### Di sản tiêu cực
+> “Quyền lực tuyệt đối dẫn tới tham nhũng tuyệt đối.”
 
-💰 **Tham nhũng trắng trợn:**
-- Bạn và đồng bọn tham ô hàng nghìn đồng vàng
-- Bóc lột lãnh dân, đánh thuế nặng
-- Chia chác quyền lợi cho tầng lớp quý tộc, bỏ rơi người nghèo
+Tên bạn trở thành **bài học cảnh báo** trong sách giáo khoa.
 
 ---
 
-**HẬU QUẢ TỒI TỆ:**
-
-⚔️ Năm 16: Nổ ra Cuộc Khởi nghĩa Lãnh dân quy mô lớn nhất trong lịch sử.
-
-🔥 Năm 17: Hoàng gia cử quân đội đàn áp. 500 người chết, 1000 người bị giam.
-
-⚖️ Năm 18: Hoàng gia họp Toà án Tối cao, XÉT XỬ CÔNG KHAI bạn và Bá tước với 50 TỘI DANH.
-
-📜 **Bản án:**
-- Truất phế mọi chức vụ
-- Tịch thu toàn bộ tài sản
-- Lưu đày đến Đảo Hắc Ngục suốt đời
-- Tên tuổi bị ghi vào "THIÊN HẠ DANH SỬ" - Sách ghi những kẻ phản bội nhân dân
-
----
-
-**Di sản đen tối:**
-
-100 năm sau, các học giả viết:
-
-"Lãnh địa Tân Phú đời Minh Vương là BÀI HỌC ĐẪM MÁU về việc quyền lực không được giám sát sẽ dẫn đến TỘI ÁC như thế nào.
-
-Đây là minh chứng cho câu nói của Hiền triết Sophia: 'Quyền lực tuyệt đối dẫn đến tham nhũng tuyệt đối. Một xã hội không có dân chủ là một địa ngục trần gian.'"
-
-Tên bạn trở thành BIỂU TƯỢNG của Sự Bạo ngược trong sách giáo khoa, được dạy cho trẻ em như một BÀI HỌC CẢNH BÁO.
-
----
-
-**Lời cuối:** Bạn đã có cơ hội tạo ra một Lãnh địa công bằng, dân chủ, thịnh vượng. Nhưng bạn đã chọn con đường ĐỐI LẬP - Bạo ngược, Độc tài, Tội ác.
-
-Lịch sử sẽ không bao giờ tha thứ.`,
-    `⭐ Điều kiện: CẢ 3 chỉ số < 25. Ending này chỉ xuất hiện khi bạn vi phạm TOÀN BỘ nguyên tắc dân chủ.`]
+**Lời kết:** Bạn đã có cơ hội kiến tạo một trật tự công bằng, nhưng đã chọn con đường **độc tài**. Lịch sử không tha thứ.`,
+    `⭐ **Điều kiện:** Cả 3 chỉ số < 25. Ending này chỉ xuất hiện khi bạn vi phạm toàn bộ nguyên tắc dân chủ.`]
   }
 };
 

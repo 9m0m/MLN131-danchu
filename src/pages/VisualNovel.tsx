@@ -5,6 +5,8 @@
 
 import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { stages, endings } from '../data/gameData';
 import { GameState, Choice, EndingType, ChoiceHistory, ChoiceEffects } from '../types/game';
 import './VisualNovel.css';
@@ -488,14 +490,17 @@ function EndingScreen({ gameState, onRestart }: EndingScreenProps) {
           <div className="vn-ending-content">
             {/* Nội dung ending chính */}
             {endingData.content.map((paragraph: string, i: number) => (
-              <motion.p
+              <motion.div
                 key={i}
+                className={`vn-ending-md ${i === endingData.content.length - 1 ? 'vn-ending-meta' : ''}`}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 + i * 0.3 }}
               >
-                {paragraph}
-              </motion.p>
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {paragraph}
+                </ReactMarkdown>
+              </motion.div>
             ))}
 
             {/* Nội dung chi tiết cho bad ending 1 */}

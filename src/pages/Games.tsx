@@ -58,7 +58,7 @@ export function Games() {
             <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
                 {/* Nút quay lại */}
                 <motion.button
-                    className="fixed top-4 left-4 z-50 flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-bold transition-all"
+                    className="fixed top-20 right-4 z-50 flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-bold transition-all"
                     onClick={() => setActiveGame(null)}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}

@@ -852,19 +852,56 @@
 }
 
 .vn-ending-content {
-  font-size: 1.125rem;
+  font-size: 1.05rem;
   color: #e2e8f0;
-  line-height: 2;
-  text-align: center;
+  line-height: 1.9;
+  text-align: left;
 }
 
-.vn-ending-content p {
-  margin-bottom: 1rem;
+.vn-ending-md {
+  margin-bottom: 1.25rem;
 }
 
-.vn-ending-content p:last-child {
-  font-style: italic;
+.vn-ending-meta {
   color: #94a3b8;
+  font-style: italic;
+}
+
+.vn-ending-content h3 {
+  font-size: 1.05rem;
+  color: #f8fafc;
+  margin: 0.75rem 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.vn-ending-content ul,
+.vn-ending-content ol {
+  margin: 0.5rem 0 1rem;
+  padding-left: 1.25rem;
+}
+
+.vn-ending-content li {
+  margin-bottom: 0.5rem;
+}
+
+.vn-ending-content strong {
+  color: #fde68a;
+  font-weight: 700;
+}
+
+.vn-ending-content blockquote {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid #fbbf24;
+  background: rgba(251, 191, 36, 0.08);
+  color: #e5e7eb;
+}
+
+.vn-ending-content hr {
+  border: 0;
+  border-top: 1px dashed rgba(255, 255, 255, 0.2);
+  margin: 1rem 0;
 }
 
 /* Final Stats Summary */
